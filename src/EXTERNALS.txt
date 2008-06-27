@@ -1,1 +1,1 @@
-pyogp.lib.base http://svn.secondlife.com/svn/linden/projects/2008/pyogp/pyogp.lib.base/trunk
+pyogp.lib.base https://svn.secondlife.com/svn/linden/projects/2008/pyogp/pyogp.lib.base/trunk
