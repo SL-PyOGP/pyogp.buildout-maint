@@ -83,7 +83,7 @@
 <dl class="class">
 <dt id="pyogp.lib.base.inventory.InventoryFolder">
 <em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">InventoryFolder</tt><big>(</big><em>Name=None</em>, <em>FolderID=None</em>, <em>ParentID=None</em>, <em>Version=None</em>, <em>Type=None</em>, <em>Descendents=0</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder" title="Permalink to this definition">¶</a></dt>
+class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">InventoryFolder</tt><big>(</big><em>Name=None</em>, <em>FolderID=None</em>, <em>ParentID=None</em>, <em>Version=None</em>, <em>Type=None</em>, <em>AgentID=00000000-0000-0000-0000-000000000000</em>, <em>Descendents=0</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder" title="Permalink to this definition">¶</a></dt>
 <dd><p>represents an Inventory folder</p>
 <p>Initialize the event queue client class
 &gt;&gt;&gt; inventoryfolder = InventoryFolder()</p>
@@ -110,7 +110,7 @@ Tests: tests/test_inventory.py</p>
 <dl class="class">
 <dt id="pyogp.lib.base.inventory.InventoryItem">
 <em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">InventoryItem</tt><big>(</big><em>ItemID=None</em>, <em>FolderID=None</em>, <em>CreatorID=None</em>, <em>OwnerID=None</em>, <em>GroupID=None</em>, <em>BaseMask=None</em>, <em>OwnerMask=None</em>, <em>GroupMask=None</em>, <em>EveryoneMask=None</em>, <em>NextOwnerMask=0</em>, <em>GroupOwned=None</em>, <em>AssetID=None</em>, <em>Type=None</em>, <em>InvType=None</em>, <em>Flags=None</em>, <em>SaleType=None</em>, <em>SalePrice=None</em>, <em>Name=None</em>, <em>Description=None</em>, <em>CreationDate=None</em>, <em>CRC=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryItem" title="Permalink to this definition">¶</a></dt>
+class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">InventoryItem</tt><big>(</big><em>ItemID=None</em>, <em>FolderID=None</em>, <em>CreatorID=None</em>, <em>OwnerID=None</em>, <em>GroupID=None</em>, <em>BaseMask=None</em>, <em>OwnerMask=None</em>, <em>GroupMask=None</em>, <em>EveryoneMask=None</em>, <em>NextOwnerMask=0</em>, <em>GroupOwned=None</em>, <em>AssetID=None</em>, <em>Type=None</em>, <em>InvType=None</em>, <em>Flags=None</em>, <em>SaleType=None</em>, <em>SalePrice=None</em>, <em>Name=None</em>, <em>Description=None</em>, <em>CreationDate=None</em>, <em>CRC=None</em>, <em>LastOwnerID=00000000-0000-0000-0000-000000000000</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryItem" title="Permalink to this definition">¶</a></dt>
 <dd><p>represents an Inventory item</p>
 <p>Initialize the InventoryItem class
 &gt;&gt;&gt; inventoryitem = InventoryItem()</p>
@@ -154,7 +154,7 @@ Tests: tests/test_inventory.py</p>
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.Inventory.display_folder_contents">
-<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.display_folder_contents" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.display_folder_contents" title="Permalink to this definition">¶</a></dt>
 <dd>returns a list of the local representation of a folder&#8217;s contents</dd></dl>
 
 <dl class="method">
@@ -237,11 +237,6 @@ look through everything in self.folders</p>
 <tt class="descname">sendFetchLibRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
 <dd>send a request to the grid for library items</dd></dl>
 
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.update_inventory_folder">
-<tt class="descname">update_inventory_folder</tt><big>(</big><em>folder_data</em>, <em>folder_id</em>, <em>descdendents</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.update_inventory_folder" title="Permalink to this definition">¶</a></dt>
-<dd>update a folder&#8217;s attributes</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
@@ -256,7 +251,7 @@ class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="de
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.display_folder_contents">
-<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.display_folder_contents" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.display_folder_contents" title="Permalink to this definition">¶</a></dt>
 <dd>returns a list of the local representation of a folder&#8217;s contents</dd></dl>
 
 <dl class="method">
@@ -284,12 +279,12 @@ given a match, sends an ImprovedInventoryMessage packet to the specified AgentID
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.onFetchInventoryReply">
-<tt class="descname">onFetchInventoryReply</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.onFetchInventoryReply" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">onFetchInventoryReply</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.onFetchInventoryReply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.onInventoryDescendents">
-<tt class="descname">onInventoryDescendents</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.onInventoryDescendents" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">onInventoryDescendents</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.onInventoryDescendents" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -321,28 +316,23 @@ look through everything in self.folders</p>
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.sendFetchInventoryDescendentsRequest">
-<tt class="descname">sendFetchInventoryDescendentsRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchInventoryDescendentsRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the server for folder contents</dd></dl>
+<tt class="descname">sendFetchInventoryDescendentsRequest</tt><big>(</big><em>folder_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchInventoryDescendentsRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the server for inventory folder contents</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.sendFetchInventoryRequest">
-<tt class="descname">sendFetchInventoryRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchInventoryRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the grid for folder attributes</dd></dl>
+<tt class="descname">sendFetchInventoryRequest</tt><big>(</big><em>item_ids=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchInventoryRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the grid for inventory item attributes</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.sendFetchLibDescendentsRequest">
-<tt class="descname">sendFetchLibDescendentsRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchLibDescendentsRequest" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">sendFetchLibDescendentsRequest</tt><big>(</big><em>folder_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchLibDescendentsRequest" title="Permalink to this definition">¶</a></dt>
 <dd>send a request to the server for folder contents</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.sendFetchLibRequest">
-<tt class="descname">sendFetchLibRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the grid for folder attributes</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.AIS.update_inventory_folder">
-<tt class="descname">update_inventory_folder</tt><big>(</big><em>folder_data</em>, <em>folder_id</em>, <em>descdendents</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.update_inventory_folder" title="Permalink to this definition">¶</a></dt>
-<dd>update a folder&#8217;s attributes</dd></dl>
+<tt class="descname">sendFetchLibRequest</tt><big>(</big><em>folder_id</em>, <em>item_ids=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the grid for library item attributes</dd></dl>
 
 </dd></dl>
 
@@ -357,7 +347,7 @@ class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="de
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents">
-<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents" title="Permalink to this definition">¶</a></dt>
 <dd>returns a list of the local representation of a folder&#8217;s contents</dd></dl>
 
 <dl class="method">
@@ -439,11 +429,6 @@ look through everything in self.folders</p>
 <dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibRequest">
 <tt class="descname">sendFetchLibRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
 <dd>send a request to the grid for library items</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.update_inventory_folder">
-<tt class="descname">update_inventory_folder</tt><big>(</big><em>folder_data</em>, <em>folder_id</em>, <em>descdendents</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.update_inventory_folder" title="Permalink to this definition">¶</a></dt>
-<dd>update a folder&#8217;s attributes</dd></dl>
 
 </dd></dl>
 

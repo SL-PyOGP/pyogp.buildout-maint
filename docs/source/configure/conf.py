@@ -16,9 +16,13 @@ import sys, os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.append(os.path.abspath('../../../'))
-for directory in os.listdir('../../../../../eggs/'):
-    sys.path.append(os.path.abspath('../../../../../eggs/' + directory))
+
+eggs_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../eggs/'))
+lib_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../src/pyogp.lib.base/'))
+
+sys.path.append(lib_dir)
+for directory in os.listdir(eggs_dir):
+    sys.path.append(os.path.join(eggs_dir, directory))
 
 # -- General configuration -----------------------------------------------------
 

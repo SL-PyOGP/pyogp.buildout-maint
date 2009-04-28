@@ -276,6 +276,7 @@
     <dt><a href="modules/udpserializer.html#pyogp.lib.base.message.udpserializer.TemplateDictionary.build_message_ids">(pyogp.lib.base.message.udpserializer.TemplateDictionary method)</a></dt>
   </dl></dd></dl></td><td width="33%" valign="top"><dl>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.BulkUpdateInventoryPacket">BulkUpdateInventoryPacket (class in pyogp.lib.base.message.packets)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.buy">buy() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.BuyObjectInventoryPacket">BuyObjectInventoryPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/helpers.html#pyogp.lib.base.utilities.helpers.Helpers.bytes_to_ascii">bytes_to_ascii() (pyogp.lib.base.utilities.helpers.Helpers method)</a></dt>
 <dt><a href="modules/helpers.html#pyogp.lib.base.utilities.helpers.Helpers.bytes_to_base64">bytes_to_base64() (pyogp.lib.base.utilities.helpers.Helpers method)</a></dt>
@@ -286,7 +287,6 @@
 <table width="100%" class="indextable"><tr><td width="33%" valign="top">
 <dl>
 
-<dt><a href="modules/callbacks.html#pyogp.lib.base.utilities.callbacks.Callbacks">Callbacks (class in pyogp.lib.base.utilities.callbacks)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.CameraConstraintPacket">CameraConstraintPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.CancelAuctionPacket">CancelAuctionPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/caps.html#pyogp.lib.base.caps.Capability">Capability (class in pyogp.lib.base.caps)</a></dt>
@@ -313,6 +313,7 @@
     <dt><a href="modules/udpdispatcher.html#pyogp.lib.base.message.udpdispatcher.CircuitManager">(class in pyogp.lib.base.message.udpdispatcher)</a></dt>
   </dl></dd>
 <dt><a href="modules/exc.html#pyogp.lib.base.exc.CircuitNotFound">CircuitNotFound (class in pyogp.lib.base.exc)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.claim">claim() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ClassifiedDeletePacket">ClassifiedDeletePacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ClassifiedGodDeletePacket">ClassifiedGodDeletePacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ClassifiedInfoReplyPacket">ClassifiedInfoReplyPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -389,6 +390,7 @@
 <dt><a href="unittest/packet_test.html#pyogp.lib.base.message.tests.packet_test.PacketTest.debug">debug() (pyogp.lib.base.message.tests.packet_test.PacketTest method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.DeclineCallingCardPacket">DeclineCallingCardPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.DeclineFriendshipPacket">DeclineFriendshipPacket (class in pyogp.lib.base.message.packets)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.deed_to_group">deed_to_group() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="unittest/packet_test.html#pyogp.lib.base.message.tests.packet_test.PacketTest.defaultTestResult">defaultTestResult() (pyogp.lib.base.message.tests.packet_test.PacketTest method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.DenyTrustedCircuitPacket">DenyTrustedCircuitPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.derez">derez() (pyogp.lib.base.objects.Object method)</a></dt>
@@ -397,12 +399,12 @@
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.DeRezObjectPacket">DeRezObjectPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.deselect">deselect() (pyogp.lib.base.objects.Object method)</a></dt>
 <dt><a href="modules/exc.html#pyogp.lib.base.exc.DeserializationError">DeserializationError (class in pyogp.lib.base.exc)</a></dt>
-<dt><a href="modules/exc.html#pyogp.lib.base.exc.DeserializationFailed">DeserializationFailed (class in pyogp.lib.base.exc)</a></dt></dl></td><td width="33%" valign="top"><dl>
+<dt><a href="modules/exc.html#pyogp.lib.base.exc.DeserializationFailed">DeserializationFailed (class in pyogp.lib.base.exc)</a></dt>
 <dt><a href="modules/udpdeserializer.html#pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer.deserialize">deserialize() (pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer method)</a></dt>
   <dd><dl>
     <dt><a href="modules/udpdispatcher.html#pyogp.lib.base.message.udpdispatcher.UDPPacketDeserializer.deserialize">(pyogp.lib.base.message.udpdispatcher.UDPPacketDeserializer method)</a></dt>
     <dt><a href="modules/helpers.html#pyogp.lib.base.utilities.helpers.LLSDDeserializer.deserialize">(pyogp.lib.base.utilities.helpers.LLSDDeserializer method)</a></dt>
-  </dl></dd>
+  </dl></dd></dl></td><td width="33%" valign="top"><dl>
 <dt><a href="modules/helpers.html#pyogp.lib.base.utilities.helpers.LLSDDeserializer.deserialize_file">deserialize_file() (pyogp.lib.base.utilities.helpers.LLSDDeserializer method)</a></dt>
 <dt><a href="modules/helpers.html#pyogp.lib.base.utilities.helpers.LLSDDeserializer.deserialize_string">deserialize_string() (pyogp.lib.base.utilities.helpers.LLSDDeserializer method)</a></dt>
 <dt><a href="modules/exc.html#pyogp.lib.base.exc.DeserializerNotFound">DeserializerNotFound (class in pyogp.lib.base.exc)</a></dt>
@@ -425,12 +427,17 @@
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.DirPopularQueryBackendPacket">DirPopularQueryBackendPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.DirPopularQueryPacket">DirPopularQueryPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.DirPopularReplyPacket">DirPopularReplyPacket (class in pyogp.lib.base.message.packets)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.disable_objects">disable_objects() (pyogp.lib.base.parcel.Parcel method)</a></dt>
+  <dd><dl>
+    <dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.disable_objects">(pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+  </dl></dd>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.DisableSimulatorPacket">DisableSimulatorPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.AIS.display_folder_contents">display_folder_contents() (pyogp.lib.base.inventory.AIS method)</a></dt>
   <dd><dl>
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory.display_folder_contents">(pyogp.lib.base.inventory.Inventory method)</a></dt>
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents">(pyogp.lib.base.inventory.UDP_Inventory method)</a></dt>
   </dl></dd>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.divide_parcel">divide_parcel() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 </dl></td></tr></table>
 
 <h2 id="E">E</h2>
@@ -642,6 +649,7 @@
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory.give_inventory">(pyogp.lib.base.inventory.Inventory method)</a></dt>
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.UDP_Inventory.give_inventory">(pyogp.lib.base.inventory.UDP_Inventory method)</a></dt>
   </dl></dd>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.godforce_owner">godforce_owner() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.GodKickUserPacket">GodKickUserPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.GodlikeMessagePacket">GodlikeMessagePacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.GodUpdateRegionInfoPacket">GodUpdateRegionInfoPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -722,10 +730,11 @@
 <dt><a href="modules/agentmanager.html#pyogp.lib.base.agentmanager.AgentManager.initialize">initialize() (pyogp.lib.base.agentmanager.AgentManager method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.InitiateDownloadPacket">InitiateDownloadPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/agent.html#pyogp.lib.base.agent.Agent.instant_message">instant_message() (pyogp.lib.base.agent.Agent method)</a></dt>
+<dt><a href="modules/event_system.html#pyogp.lib.base.event_system.InstantMessageReceived">InstantMessageReceived (class in pyogp.lib.base.event_system)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.InternalScriptMailPacket">InternalScriptMailPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory">Inventory (class in pyogp.lib.base.inventory)</a></dt>
-<dt><a href="modules/packets.html#pyogp.lib.base.message.packets.InventoryAssetResponsePacket">InventoryAssetResponsePacket (class in pyogp.lib.base.message.packets)</a></dt>
-<dt><a href="modules/packets.html#pyogp.lib.base.message.packets.InventoryDescendentsPacket">InventoryDescendentsPacket (class in pyogp.lib.base.message.packets)</a></dt></dl></td><td width="33%" valign="top"><dl>
+<dt><a href="modules/packets.html#pyogp.lib.base.message.packets.InventoryAssetResponsePacket">InventoryAssetResponsePacket (class in pyogp.lib.base.message.packets)</a></dt></dl></td><td width="33%" valign="top"><dl>
+<dt><a href="modules/packets.html#pyogp.lib.base.message.packets.InventoryDescendentsPacket">InventoryDescendentsPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.InventoryFolder">InventoryFolder (class in pyogp.lib.base.inventory)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.InventoryItem">InventoryItem (class in pyogp.lib.base.inventory)</a></dt>
 <dt><a href="modules/enums.html#pyogp.lib.base.utilities.enums.InventoryType">InventoryType (class in pyogp.lib.base.utilities.enums)</a></dt>
@@ -749,6 +758,7 @@
 <dl>
 
 <dt><a href="modules/groups.html#pyogp.lib.base.groups.GroupManager.join_group">join_group() (pyogp.lib.base.groups.GroupManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.join_parcels">join_parcels() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.JoinGroupReplyPacket">JoinGroupReplyPacket (class in pyogp.lib.base.message.packets)</a></dt></dl></td><td width="33%" valign="top"><dl>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.JoinGroupRequestPacket">JoinGroupRequestPacket (class in pyogp.lib.base.message.packets)</a></dt>
 </dl></td></tr></table>
@@ -1040,9 +1050,9 @@
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ObjectSpinStartPacket">ObjectSpinStartPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ObjectSpinStopPacket">ObjectSpinStopPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ObjectSpinUpdatePacket">ObjectSpinUpdatePacket (class in pyogp.lib.base.message.packets)</a></dt>
-<dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ObjectUpdateCachedPacket">ObjectUpdateCachedPacket (class in pyogp.lib.base.message.packets)</a></dt></dl></td><td width="33%" valign="top"><dl>
+<dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ObjectUpdateCachedPacket">ObjectUpdateCachedPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ObjectUpdateCompressedPacket">ObjectUpdateCompressedPacket (class in pyogp.lib.base.message.packets)</a></dt>
-<dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ObjectUpdatePacket">ObjectUpdatePacket (class in pyogp.lib.base.message.packets)</a></dt>
+<dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ObjectUpdatePacket">ObjectUpdatePacket (class in pyogp.lib.base.message.packets)</a></dt></dl></td><td width="33%" valign="top"><dl>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.OfferCallingCardPacket">OfferCallingCardPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.OfflineNotificationPacket">OfflineNotificationPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/login.html#pyogp.lib.base.login.OGPLoginParams">OGPLoginParams (class in pyogp.lib.base.login)</a></dt>
@@ -1066,6 +1076,7 @@
 <dt><a href="modules/groups.html#pyogp.lib.base.groups.GroupManager.onCreateGroupReply">onCreateGroupReply() (pyogp.lib.base.groups.GroupManager method)</a></dt>
 <dt><a href="modules/agent.html#pyogp.lib.base.agent.Agent.onEnableSimulator">onEnableSimulator() (pyogp.lib.base.agent.Agent method)</a></dt>
 <dt><a href="modules/agent.html#pyogp.lib.base.agent.Agent.onEstablishAgentCommunication">onEstablishAgentCommunication() (pyogp.lib.base.agent.Agent method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.onEstateCovenantReply">onEstateCovenantReply() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="unittest/test_event_system.html#pyogp.lib.base.tests.test_event_system.TestEvents.onEvent">onEvent() (pyogp.lib.base.tests.test_event_system.TestEvents method)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.AIS.onFetchInventoryReply">onFetchInventoryReply() (pyogp.lib.base.inventory.AIS method)</a></dt>
   <dd><dl>
@@ -1084,11 +1095,12 @@
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.OnlineNotificationPacket">OnlineNotificationPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.onObjectProperties">onObjectProperties() (pyogp.lib.base.objects.Objects method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.onObjectUpdate">onObjectUpdate() (pyogp.lib.base.objects.Objects method)</a></dt>
-  <dd><dl>
-    <dt><a href="modules/callbacks.html#pyogp.lib.base.utilities.callbacks.Callbacks.onObjectUpdate">(pyogp.lib.base.utilities.callbacks.Callbacks method)</a></dt>
-  </dl></dd>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.onObjectUpdateCached">onObjectUpdateCached() (pyogp.lib.base.objects.Objects method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.onObjectUpdateCompressed">onObjectUpdateCompressed() (pyogp.lib.base.objects.Objects method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.onParcelAccessListReply">onParcelAccessListReply() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.onParcelOverlay">onParcelOverlay() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.onParcelProperties">onParcelProperties() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.onParcelPropertiesUpdate">onParcelPropertiesUpdate() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.onRegionHandshake">onRegionHandshake() (pyogp.lib.base.region.Region method)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.onStartPingCheck">onStartPingCheck() (pyogp.lib.base.region.Region method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.OpenCircuitPacket">OpenCircuitPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -1119,6 +1131,7 @@
     <dt><a href="modules/udpdeserializer.html#pyogp.lib.base.message.udpdeserializer.PackFlags">(class in pyogp.lib.base.message.udpdeserializer)</a></dt>
     <dt><a href="modules/udpdispatcher.html#pyogp.lib.base.message.udpdispatcher.PackFlags">(class in pyogp.lib.base.message.udpdispatcher)</a></dt>
   </dl></dd>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel">Parcel (class in pyogp.lib.base.parcel)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelAccessListReplyPacket">ParcelAccessListReplyPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelAccessListRequestPacket">ParcelAccessListRequestPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelAccessListUpdatePacket">ParcelAccessListUpdatePacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -1136,6 +1149,7 @@
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelInfoReplyPacket">ParcelInfoReplyPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelInfoRequestPacket">ParcelInfoRequestPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelJoinPacket">ParcelJoinPacket (class in pyogp.lib.base.message.packets)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager">ParcelManager (class in pyogp.lib.base.parcel)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelMediaCommandMessagePacket">ParcelMediaCommandMessagePacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelMediaUpdatePacket">ParcelMediaUpdatePacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ParcelObjectOwnersReplyPacket">ParcelObjectOwnersReplyPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -1233,6 +1247,7 @@
 <dt><a href="unittest/basics.html#module-pyogp.lib.base.network.tests.basics">pyogp.lib.base.network.tests.basics (module)</a></dt>
 <dt><a href="unittest/network_test.html#module-pyogp.lib.base.network.tests.network_test">pyogp.lib.base.network.tests.network_test (module)</a></dt>
 <dt><a href="modules/objects.html#module-pyogp.lib.base.objects">pyogp.lib.base.objects (module)</a></dt>
+<dt><a href="modules/parcel.html#module-pyogp.lib.base.parcel">pyogp.lib.base.parcel (module)</a></dt>
 <dt><a href="modules/permissions.html#module-pyogp.lib.base.permissions">pyogp.lib.base.permissions (module)</a></dt>
 <dt><a href="modules/region.html#module-pyogp.lib.base.region">pyogp.lib.base.region (module)</a></dt>
 <dt><a href="modules/settings.html#module-pyogp.lib.base.settings">pyogp.lib.base.settings (module)</a></dt>
@@ -1256,9 +1271,9 @@
 <dt><a href="unittest/test_legacy_login.html#module-pyogp.lib.base.tests.test_legacy_login">pyogp.lib.base.tests.test_legacy_login (module)</a></dt>
 <dt><a href="unittest/test_objects.html#module-pyogp.lib.base.tests.test_objects">pyogp.lib.base.tests.test_objects (module)</a></dt>
 <dt><a href="unittest/test_ogp_login.html#module-pyogp.lib.base.tests.test_ogp_login">pyogp.lib.base.tests.test_ogp_login (module)</a></dt>
+<dt><a href="unittest/test_parcel.html#module-pyogp.lib.base.tests.test_parcel">pyogp.lib.base.tests.test_parcel (module)</a></dt>
 <dt><a href="unittest/test_region.html#module-pyogp.lib.base.tests.test_region">pyogp.lib.base.tests.test_region (module)</a></dt>
 <dt><a href="unittest/testDocTests.html#module-pyogp.lib.base.tests.testDocTests">pyogp.lib.base.tests.testDocTests (module)</a></dt>
-<dt><a href="modules/callbacks.html#module-pyogp.lib.base.utilities.callbacks">pyogp.lib.base.utilities.callbacks (module)</a></dt>
 <dt><a href="modules/enums.html#module-pyogp.lib.base.utilities.enums">pyogp.lib.base.utilities.enums (module)</a></dt>
 <dt><a href="modules/events.html#module-pyogp.lib.base.utilities.events">pyogp.lib.base.utilities.events (module)</a></dt>
 <dt><a href="modules/helpers.html#module-pyogp.lib.base.utilities.helpers">pyogp.lib.base.utilities.helpers (module)</a></dt>
@@ -1289,6 +1304,7 @@
     <dt><a href="modules/event_system.html#pyogp.lib.base.event_system.EventNotifier.received">(pyogp.lib.base.event_system.EventNotifier method)</a></dt>
     <dt><a href="modules/packethandler.html#pyogp.lib.base.message.packethandler.PacketReceivedNotifier.received">(pyogp.lib.base.message.packethandler.PacketReceivedNotifier method)</a></dt>
   </dl></dd>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.reclaim">reclaim() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RedoPacket">RedoPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region">Region (class in pyogp.lib.base.region)</a></dt>
 <dt><a href="modules/exc.html#pyogp.lib.base.exc.RegionCapNotAvailable">RegionCapNotAvailable (class in pyogp.lib.base.exc)</a></dt>
@@ -1304,6 +1320,7 @@
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RegionPresenceResponsePacket">RegionPresenceResponsePacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.RegionSeedCapability">RegionSeedCapability (class in pyogp.lib.base.region)</a></dt>
 <dt><a href="modules/exc.html#pyogp.lib.base.exc.RegionSeedCapNotAvailable">RegionSeedCapNotAvailable (class in pyogp.lib.base.exc)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.release">release() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.InventoryFolder.remove">remove() (pyogp.lib.base.inventory.InventoryFolder method)</a></dt>
 <dt><a href="modules/circuit.html#pyogp.lib.base.message.circuit.CircuitManager.remove_circuit_data">remove_circuit_data() (pyogp.lib.base.message.circuit.CircuitManager method)</a></dt>
   <dd><dl>
@@ -1320,7 +1337,8 @@
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RemoveTaskInventoryPacket">RemoveTaskInventoryPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ReplyTaskInventoryPacket">ReplyTaskInventoryPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.ReportAutosaveCrashPacket">ReportAutosaveCrashPacket (class in pyogp.lib.base.message.packets)</a></dt>
-<dt><a href="modules/appearance.html#pyogp.lib.base.appearance.Appearance.request_agent_wearables">request_agent_wearables() (pyogp.lib.base.appearance.Appearance method)</a></dt></dl></td><td width="33%" valign="top"><dl>
+<dt><a href="modules/appearance.html#pyogp.lib.base.appearance.Appearance.request_agent_wearables">request_agent_wearables() (pyogp.lib.base.appearance.Appearance method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.request_estate_covenant">request_estate_covenant() (pyogp.lib.base.parcel.ParcelManager method)</a></dt></dl></td><td width="33%" valign="top"><dl>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.AIS.request_inventory_by_id">request_inventory_by_id() (pyogp.lib.base.inventory.AIS method)</a></dt>
   <dd><dl>
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory.request_inventory_by_id">(pyogp.lib.base.inventory.Inventory method)</a></dt>
@@ -1333,6 +1351,7 @@
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.UDP_Inventory.request_known_folder_contents">(pyogp.lib.base.inventory.UDP_Inventory method)</a></dt>
   </dl></dd>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.request_object_update">request_object_update() (pyogp.lib.base.objects.Objects method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.request_parcel_access_list">request_parcel_access_list() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RequestGodlikePowersPacket">RequestGodlikePowersPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RequestImagePacket">RequestImagePacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RequestInventoryAssetPacket">RequestInventoryAssetPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -1347,6 +1366,8 @@
 <dt><a href="modules/exc.html#pyogp.lib.base.exc.ResourceError">ResourceError (class in pyogp.lib.base.exc)</a></dt>
 <dt><a href="modules/exc.html#pyogp.lib.base.exc.ResourceNotFound">ResourceNotFound (class in pyogp.lib.base.exc)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RetrieveInstantMessagesPacket">RetrieveInstantMessagesPacket (class in pyogp.lib.base.message.packets)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.return_objects">return_objects() (pyogp.lib.base.parcel.Parcel method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.return_parcel_objects">return_parcel_objects() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RevokePermissionsPacket">RevokePermissionsPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.InventoryItem.rez_object">rez_object() (pyogp.lib.base.inventory.InventoryItem method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.RezMultipleAttachmentsFromInvPacket">RezMultipleAttachmentsFromInvPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -1398,6 +1419,7 @@
   </dl></dd>
 <dt><a href="modules/caps.html#pyogp.lib.base.caps.SeedCapability">SeedCapability (class in pyogp.lib.base.caps)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.select">select() (pyogp.lib.base.objects.Object method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.select_objects">select_objects() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="modules/agent.html#pyogp.lib.base.agent.Agent.send_AgentDataUpdateRequest">send_AgentDataUpdateRequest() (pyogp.lib.base.agent.Agent method)</a></dt>
 <dt><a href="modules/agent.html#pyogp.lib.base.agent.Agent.send_ImprovedInstantMessage">send_ImprovedInstantMessage() (pyogp.lib.base.agent.Agent method)</a></dt>
 <dt><a href="modules/udpdispatcher.html#pyogp.lib.base.message.udpdispatcher.UDPDispatcher.send_message">send_message() (pyogp.lib.base.message.udpdispatcher.UDPDispatcher method)</a></dt>
@@ -1425,6 +1447,7 @@
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendAgentUpdate">sendAgentUpdate() (pyogp.lib.base.region.Region method)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendCompleteAgentMovement">sendCompleteAgentMovement() (pyogp.lib.base.region.Region method)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendCompletePingCheck">sendCompletePingCheck() (pyogp.lib.base.region.Region method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendEstateCovenantRequest">sendEstateCovenantRequest() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.AIS.sendFetchInventoryDescendentsRequest">sendFetchInventoryDescendentsRequest() (pyogp.lib.base.inventory.AIS method)</a></dt>
   <dd><dl>
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory.sendFetchInventoryDescendentsRequest">(pyogp.lib.base.inventory.Inventory method)</a></dt>
@@ -1445,6 +1468,12 @@
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory.sendFetchLibRequest">(pyogp.lib.base.inventory.Inventory method)</a></dt>
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibRequest">(pyogp.lib.base.inventory.UDP_Inventory method)</a></dt>
   </dl></dd>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelAccessListRequest">sendParcelAccessListRequest() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelDisableObjects">sendParcelDisableObjects() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelDivide">sendParcelDivide() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelJoin">sendParcelJoin() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelPropertiesRequest">sendParcelPropertiesRequest() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelPropertiesRequestByID">sendParcelPropertiesRequestByID() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.SendPostcardPacket">SendPostcardPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendRegionHandshakeReply">sendRegionHandshakeReply() (pyogp.lib.base.region.Region method)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendUseCircuitCode">sendUseCircuitCode() (pyogp.lib.base.region.Region method)</a></dt>
@@ -1468,10 +1497,11 @@
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_copy_only_permissions">set_object_copy_only_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_copy_transfer_permissions">set_object_copy_transfer_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_description">set_object_description() (pyogp.lib.base.objects.Object method)</a></dt>
-<dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_full_permissions">set_object_full_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
+<dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_full_permissions">set_object_full_permissions() (pyogp.lib.base.objects.Object method)</a></dt></dl></td><td width="33%" valign="top"><dl>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_mod_transfer_permissions">set_object_mod_transfer_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_name">set_object_name() (pyogp.lib.base.objects.Object method)</a></dt>
-<dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_transfer_only_permissions">set_object_transfer_only_permissions() (pyogp.lib.base.objects.Object method)</a></dt></dl></td><td width="33%" valign="top"><dl>
+<dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_transfer_only_permissions">set_object_transfer_only_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.set_other_clean_time">set_other_clean_time() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="unittest/mockup_net.html#pyogp.lib.base.tests.mockup_net.MockupUDPClient.set_response">set_response() (pyogp.lib.base.tests.mockup_net.MockupUDPClient method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.SetAlwaysRunPacket">SetAlwaysRunPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.SetCPURatioPacket">SetCPURatioPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -1507,6 +1537,7 @@
     <dt><a href="unittest/test_legacy_login.html#pyogp.lib.base.tests.test_legacy_login.TestLegacyLogin.setUp">(pyogp.lib.base.tests.test_legacy_login.TestLegacyLogin method)</a></dt>
     <dt><a href="unittest/test_objects.html#pyogp.lib.base.tests.test_objects.TestObjects.setUp">(pyogp.lib.base.tests.test_objects.TestObjects method)</a></dt>
     <dt><a href="unittest/test_ogp_login.html#pyogp.lib.base.tests.test_ogp_login.TestOGPLogin.setUp">(pyogp.lib.base.tests.test_ogp_login.TestOGPLogin method)</a></dt>
+    <dt><a href="unittest/test_parcel.html#pyogp.lib.base.tests.test_parcel.TestParcels.setUp">(pyogp.lib.base.tests.test_parcel.TestParcels method)</a></dt>
     <dt><a href="unittest/test_region.html#pyogp.lib.base.tests.test_region.TestRegion.setUp">(pyogp.lib.base.tests.test_region.TestRegion method)</a></dt>
   </dl></dd>
 <dt><a href="unittest/packet_test.html#pyogp.lib.base.message.tests.packet_test.PacketTest.shortDescription">shortDescription() (pyogp.lib.base.message.tests.packet_test.PacketTest method)</a></dt>
@@ -1593,6 +1624,7 @@
     <dt><a href="unittest/test_legacy_login.html#pyogp.lib.base.tests.test_legacy_login.TestLegacyLogin.tearDown">(pyogp.lib.base.tests.test_legacy_login.TestLegacyLogin method)</a></dt>
     <dt><a href="unittest/test_objects.html#pyogp.lib.base.tests.test_objects.TestObjects.tearDown">(pyogp.lib.base.tests.test_objects.TestObjects method)</a></dt>
     <dt><a href="unittest/test_ogp_login.html#pyogp.lib.base.tests.test_ogp_login.TestOGPLogin.tearDown">(pyogp.lib.base.tests.test_ogp_login.TestOGPLogin method)</a></dt>
+    <dt><a href="unittest/test_parcel.html#pyogp.lib.base.tests.test_parcel.TestParcels.tearDown">(pyogp.lib.base.tests.test_parcel.TestParcels method)</a></dt>
     <dt><a href="unittest/test_region.html#pyogp.lib.base.tests.test_region.TestRegion.tearDown">(pyogp.lib.base.tests.test_region.TestRegion method)</a></dt>
   </dl></dd>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.TelehubInfoPacket">TelehubInfoPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -1749,6 +1781,7 @@
 <dt><a href="unittest/test_objects.html#pyogp.lib.base.tests.test_objects.TestObjects">TestObjects (class in pyogp.lib.base.tests.test_objects)</a></dt>
 <dt><a href="unittest/test_ogp_login.html#pyogp.lib.base.tests.test_ogp_login.TestOGPLogin">TestOGPLogin (class in pyogp.lib.base.tests.test_ogp_login)</a></dt>
 <dt><a href="unittest/test_packetdata.html#pyogp.lib.base.message.tests.test_packetdata.TestPacketDecode">TestPacketDecode (class in pyogp.lib.base.message.tests.test_packetdata)</a></dt>
+<dt><a href="unittest/test_parcel.html#pyogp.lib.base.tests.test_parcel.TestParcels">TestParcels (class in pyogp.lib.base.tests.test_parcel)</a></dt>
 <dt><a href="unittest/test_region.html#pyogp.lib.base.tests.test_region.TestRegion">TestRegion (class in pyogp.lib.base.tests.test_region)</a></dt>
 <dt><a href="unittest/test_udp_serializer.html#pyogp.lib.base.message.tests.test_udp_serializer.TestSerializer">TestSerializer (class in pyogp.lib.base.message.tests.test_udp_serializer)</a></dt>
 <dt><a href="unittest/test_template_parser.html#pyogp.lib.base.message.tests.test_template_parser.TestTemplates">TestTemplates (class in pyogp.lib.base.message.tests.test_template_parser)</a></dt>
@@ -1804,14 +1837,9 @@
 <dt><a href="modules/groups.html#pyogp.lib.base.groups.GroupManager.update_group">update_group() (pyogp.lib.base.groups.GroupManager method)</a></dt>
 <dt><a href="modules/groups.html#pyogp.lib.base.groups.GroupManager.update_group_by_name">update_group_by_name() (pyogp.lib.base.groups.GroupManager method)</a></dt>
 <dt><a href="modules/groups.html#pyogp.lib.base.groups.GroupManager.update_group_by_session_id">update_group_by_session_id() (pyogp.lib.base.groups.GroupManager method)</a></dt>
-<dt><a href="modules/inventory.html#pyogp.lib.base.inventory.AIS.update_inventory_folder">update_inventory_folder() (pyogp.lib.base.inventory.AIS method)</a></dt>
-  <dd><dl>
-    <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory.update_inventory_folder">(pyogp.lib.base.inventory.Inventory method)</a></dt>
-    <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.UDP_Inventory.update_inventory_folder">(pyogp.lib.base.inventory.UDP_Inventory method)</a></dt>
-  </dl></dd>
-<dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.update_multiple_objects_properties">update_multiple_objects_properties() (pyogp.lib.base.objects.Objects method)</a></dt></dl></td><td width="33%" valign="top"><dl>
+<dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.update_multiple_objects_properties">update_multiple_objects_properties() (pyogp.lib.base.objects.Objects method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.update_object_permissions">update_object_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
-<dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.update_object_properties">update_object_properties() (pyogp.lib.base.objects.Objects method)</a></dt>
+<dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.update_object_properties">update_object_properties() (pyogp.lib.base.objects.Objects method)</a></dt></dl></td><td width="33%" valign="top"><dl>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Objects.update_prim_properties">update_prim_properties() (pyogp.lib.base.objects.Objects method)</a></dt>
 <dt><a href="modules/groups.html#pyogp.lib.base.groups.Group.update_properties">update_properties() (pyogp.lib.base.groups.Group method)</a></dt>
   <dd><dl>

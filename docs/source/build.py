@@ -3,11 +3,19 @@ import re
 import pyclbr
 
 module_file_ext = ".rst"
+package_dirs = ('pyogp/lib/base')
 
-modules_dir = os.path.join(os.path.dirname(__file__) + '/modules/')
-unit_test_dir = os.path.join(os.path.dirname(__file__) + '/unittest/')
-eggs_dir = os.path.join(os.path.dirname(__file__) + '/../../../../eggs/')
-lib_dir = os.path.abspath(os.path.dirname(__file__) + '/../../')
+modules_dir = os.path.join(os.path.dirname(__file__), 'modules')
+unit_test_dir = os.path.join(os.path.dirname(__file__), 'unittest')
+eggs_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../eggs/'))
+lib_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),'../../src/pyogp.lib.base/'))
+modules_root_dir = os.path.join(lib_dir, 'pyogp', 'lib', 'base')
+
+print "Checking in %s for pyogp package to parse" % (lib_dir)
+
+if not os.path.isdir(lib_dir):
+    print "pyogp.lib.base is not found in src/ as expected, stopping"
+    sys.exit()
 
 # skip files in processing docs
 skipfiles = ['build_packet_templates.py']
@@ -20,9 +28,11 @@ if not os.path.isdir(unit_test_dir):
     print "Creating unit test modules directory: %s" % (unit_test_dir)
     os.mkdir(unit_test_dir)
 
+print "Adding %s to path" % (lib_dir)
 sys.path.append(lib_dir)
 
 for directory in os.listdir(eggs_dir):
+    print "Adding %s to sys.path" % (directory)
     sys.path.append(os.path.join(eggs_dir + directory))
 
 mock = 0
@@ -65,7 +75,8 @@ def callback(store, dirname, fnames):
         store[dirname] = keepers
 
 # look for .py files in pyogp.lib.base
-os.path.walk(os.path.abspath(os.path.dirname(__file__) + '/../../pyogp/lib/base/'), callback, store)
+print "Parsing package for docs: %s" % (modules_root_dir)
+os.path.walk(modules_root_dir, callback, store)
 
 def get_handle(_dir, fname):
 
@@ -144,7 +155,7 @@ unit_tests = []
 
 for k in store:
 
-    offset = len(os.path.abspath(os.path.dirname(__file__) + '/../..').split("/"))
+    offset = len(k.split("/")) - (len(k.split("/")) - len(lib_dir.split("/")))
 
     package_root = '.'.join(k.split("/")[offset:])
 

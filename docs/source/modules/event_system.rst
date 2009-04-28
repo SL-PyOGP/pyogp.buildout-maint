@@ -13,3 +13,8 @@
   :undoc-members:
   :inherited-members:
 
+.. autoclass:: pyogp.lib.base.event_system.InstantMessageReceived
+  :members:
+  :undoc-members:
+  :inherited-members:
+

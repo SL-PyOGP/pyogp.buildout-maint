@@ -120,6 +120,7 @@
   </dl></dd>
 <dt><a href="modules/caps.html#pyogp.lib.base.caps.SeedCapability">SeedCapability (class in pyogp.lib.base.caps)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.select">select() (pyogp.lib.base.objects.Object method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.select_objects">select_objects() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="modules/agent.html#pyogp.lib.base.agent.Agent.send_AgentDataUpdateRequest">send_AgentDataUpdateRequest() (pyogp.lib.base.agent.Agent method)</a></dt>
 <dt><a href="modules/agent.html#pyogp.lib.base.agent.Agent.send_ImprovedInstantMessage">send_ImprovedInstantMessage() (pyogp.lib.base.agent.Agent method)</a></dt>
 <dt><a href="modules/udpdispatcher.html#pyogp.lib.base.message.udpdispatcher.UDPDispatcher.send_message">send_message() (pyogp.lib.base.message.udpdispatcher.UDPDispatcher method)</a></dt>
@@ -147,6 +148,7 @@
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendAgentUpdate">sendAgentUpdate() (pyogp.lib.base.region.Region method)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendCompleteAgentMovement">sendCompleteAgentMovement() (pyogp.lib.base.region.Region method)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendCompletePingCheck">sendCompletePingCheck() (pyogp.lib.base.region.Region method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendEstateCovenantRequest">sendEstateCovenantRequest() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.AIS.sendFetchInventoryDescendentsRequest">sendFetchInventoryDescendentsRequest() (pyogp.lib.base.inventory.AIS method)</a></dt>
   <dd><dl>
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory.sendFetchInventoryDescendentsRequest">(pyogp.lib.base.inventory.Inventory method)</a></dt>
@@ -167,6 +169,12 @@
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.Inventory.sendFetchLibRequest">(pyogp.lib.base.inventory.Inventory method)</a></dt>
     <dt><a href="modules/inventory.html#pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibRequest">(pyogp.lib.base.inventory.UDP_Inventory method)</a></dt>
   </dl></dd>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelAccessListRequest">sendParcelAccessListRequest() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelDisableObjects">sendParcelDisableObjects() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelDivide">sendParcelDivide() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelJoin">sendParcelJoin() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelPropertiesRequest">sendParcelPropertiesRequest() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.ParcelManager.sendParcelPropertiesRequestByID">sendParcelPropertiesRequestByID() (pyogp.lib.base.parcel.ParcelManager method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.SendPostcardPacket">SendPostcardPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendRegionHandshakeReply">sendRegionHandshakeReply() (pyogp.lib.base.region.Region method)</a></dt>
 <dt><a href="modules/region.html#pyogp.lib.base.region.Region.sendUseCircuitCode">sendUseCircuitCode() (pyogp.lib.base.region.Region method)</a></dt>
@@ -190,10 +198,11 @@
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_copy_only_permissions">set_object_copy_only_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_copy_transfer_permissions">set_object_copy_transfer_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_description">set_object_description() (pyogp.lib.base.objects.Object method)</a></dt>
-<dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_full_permissions">set_object_full_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
+<dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_full_permissions">set_object_full_permissions() (pyogp.lib.base.objects.Object method)</a></dt></dl></td><td width="33%" valign="top"><dl>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_mod_transfer_permissions">set_object_mod_transfer_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
 <dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_name">set_object_name() (pyogp.lib.base.objects.Object method)</a></dt>
-<dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_transfer_only_permissions">set_object_transfer_only_permissions() (pyogp.lib.base.objects.Object method)</a></dt></dl></td><td width="33%" valign="top"><dl>
+<dt><a href="modules/objects.html#pyogp.lib.base.objects.Object.set_object_transfer_only_permissions">set_object_transfer_only_permissions() (pyogp.lib.base.objects.Object method)</a></dt>
+<dt><a href="modules/parcel.html#pyogp.lib.base.parcel.Parcel.set_other_clean_time">set_other_clean_time() (pyogp.lib.base.parcel.Parcel method)</a></dt>
 <dt><a href="unittest/mockup_net.html#pyogp.lib.base.tests.mockup_net.MockupUDPClient.set_response">set_response() (pyogp.lib.base.tests.mockup_net.MockupUDPClient method)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.SetAlwaysRunPacket">SetAlwaysRunPacket (class in pyogp.lib.base.message.packets)</a></dt>
 <dt><a href="modules/packets.html#pyogp.lib.base.message.packets.SetCPURatioPacket">SetCPURatioPacket (class in pyogp.lib.base.message.packets)</a></dt>
@@ -229,6 +238,7 @@
     <dt><a href="unittest/test_legacy_login.html#pyogp.lib.base.tests.test_legacy_login.TestLegacyLogin.setUp">(pyogp.lib.base.tests.test_legacy_login.TestLegacyLogin method)</a></dt>
     <dt><a href="unittest/test_objects.html#pyogp.lib.base.tests.test_objects.TestObjects.setUp">(pyogp.lib.base.tests.test_objects.TestObjects method)</a></dt>
     <dt><a href="unittest/test_ogp_login.html#pyogp.lib.base.tests.test_ogp_login.TestOGPLogin.setUp">(pyogp.lib.base.tests.test_ogp_login.TestOGPLogin method)</a></dt>
+    <dt><a href="unittest/test_parcel.html#pyogp.lib.base.tests.test_parcel.TestParcels.setUp">(pyogp.lib.base.tests.test_parcel.TestParcels method)</a></dt>
     <dt><a href="unittest/test_region.html#pyogp.lib.base.tests.test_region.TestRegion.setUp">(pyogp.lib.base.tests.test_region.TestRegion method)</a></dt>
   </dl></dd>
 <dt><a href="unittest/packet_test.html#pyogp.lib.base.message.tests.packet_test.PacketTest.shortDescription">shortDescription() (pyogp.lib.base.message.tests.packet_test.PacketTest method)</a></dt>
