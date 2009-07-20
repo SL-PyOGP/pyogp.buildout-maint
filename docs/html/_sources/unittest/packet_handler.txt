@@ -13,8 +13,8 @@ The basic packet handling event/callbackcase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, initialize the packet handler
-    >>> from pyogp.lib.base.message.packethandler import PacketHandler
-    >>> packet_handler = PacketHandler()
+    >>> from pyogp.lib.base.message.message_handler import MessageHandler
+    >>> packet_handler = MessageHandler()
 
 How about a mock callback handler
     >>> def callback(packet): print packet
@@ -23,12 +23,12 @@ How about a mock callback handler
     >>> onStartPingCheck_received.subscribe(callback)
 
 Stage a packet
-    >>> from pyogp.lib.base.message.packets import StartPingCheckPacket
-    >>> packet = StartPingCheckPacket()
+    >>> from pyogp.lib.base.message.message import Message
+    >>> packet = Message('StartPingCheck')
 
 Fire the event, it returns a packet
 Unpossible to include this in the test, the memory ref keeps changing
 But, you get the idea...
     event_data = packet_handler._handle(packet)
-    <pyogp.lib.base.message.packets.StartPingCheckPacket object at 0x14da450>
+    <pyogp.lib.base.message.message.Message object at 0x14da450>
 

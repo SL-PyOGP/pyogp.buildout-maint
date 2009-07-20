@@ -3,7 +3,7 @@
 
 .. automodule:: pyogp.lib.base.inventory
 
-.. autoclass:: pyogp.lib.base.inventory.InventoryFolder
+.. autoclass:: pyogp.lib.base.inventory.InventoryManager
   :members:
   :undoc-members:
   :inherited-members:
@@ -13,7 +13,7 @@
   :undoc-members:
   :inherited-members:
 
-.. autoclass:: pyogp.lib.base.inventory.Inventory
+.. autoclass:: pyogp.lib.base.inventory.UDP_Inventory
   :members:
   :undoc-members:
   :inherited-members:
@@ -23,7 +23,7 @@
   :undoc-members:
   :inherited-members:
 
-.. autoclass:: pyogp.lib.base.inventory.UDP_Inventory
+.. autoclass:: pyogp.lib.base.inventory.InventoryFolder
   :members:
   :undoc-members:
   :inherited-members:

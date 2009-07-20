@@ -81,33 +81,6 @@
   <div class="section" id="module-pyogp.lib.base.message.udpserializer">
 <h1><tt class="xref docutils literal"><span class="pre">udpserializer</span></tt><a class="headerlink" href="#module-pyogp.lib.base.message.udpserializer" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="pyogp.lib.base.message.udpserializer.UDPPacketSerializer">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.message.udpserializer.</tt><tt class="descname">UDPPacketSerializer</tt><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.UDPPacketSerializer" title="Permalink to this definition">¶</a></dt>
-<dd><p>an adpater for serializing a IUDPPacket into the UDP message format</p>
-<p>This class builds messages at its high level, that is, keeping
-that data in data structure form. A serializer should be used on
-the message produced by this so that it can be sent over a network.</p>
-<p>initialize the adapter</p>
-<dl class="method">
-<dt id="pyogp.lib.base.message.udpserializer.UDPPacketSerializer.build_block">
-<tt class="descname">build_block</tt><big>(</big><em>template_block</em>, <em>message_data</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.UDPPacketSerializer.build_block" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.message.udpserializer.UDPPacketSerializer.serialize">
-<tt class="descname">serialize</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.UDPPacketSerializer.serialize" title="Permalink to this definition">¶</a></dt>
-<dd>Builds the message by serializing the data. Creates a packet ready
-to be sent.</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.message.udpserializer.UDPPacketSerializer.set_current_template">
-<tt class="descname">set_current_template</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.UDPPacketSerializer.set_current_template" title="Permalink to this definition">¶</a></dt>
-<dd>establish the template for the current packet</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="pyogp.lib.base.message.udpserializer.MsgBlockType">
 <em class="property">
 class </em><tt class="descclassname">pyogp.lib.base.message.udpserializer.</tt><tt class="descname">MsgBlockType</tt><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.MsgBlockType" title="Permalink to this definition">¶</a></dt>
@@ -177,6 +150,33 @@ class </em><tt class="descclassname">pyogp.lib.base.message.udpserializer.</tt><
 <dt id="pyogp.lib.base.message.udpserializer.DataPacker.pack_data">
 <tt class="descname">pack_data</tt><big>(</big><em>data</em>, <em>data_type</em>, <em>endian_type=''</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.DataPacker.pack_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyogp.lib.base.message.udpserializer.UDPMessageSerializer">
+<em class="property">
+class </em><tt class="descclassname">pyogp.lib.base.message.udpserializer.</tt><tt class="descname">UDPMessageSerializer</tt><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.UDPMessageSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>an adpater for serializing a IUDPMessage into the UDP message format</p>
+<p>This class builds messages at its high level, that is, keeping
+that data in data structure form. A serializer should be used on
+the message produced by this so that it can be sent over a network.</p>
+<p>initialize the adapter</p>
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpserializer.UDPMessageSerializer.build_block">
+<tt class="descname">build_block</tt><big>(</big><em>template_block</em>, <em>message_data</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.UDPMessageSerializer.build_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpserializer.UDPMessageSerializer.serialize">
+<tt class="descname">serialize</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.UDPMessageSerializer.serialize" title="Permalink to this definition">¶</a></dt>
+<dd>Builds the message by serializing the data. Creates a packet ready
+to be sent.</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpserializer.UDPMessageSerializer.set_current_template">
+<tt class="descname">set_current_template</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpserializer.UDPMessageSerializer.set_current_template" title="Permalink to this definition">¶</a></dt>
+<dd>establish the template for the current packet</dd></dl>
 
 </dd></dl>
 

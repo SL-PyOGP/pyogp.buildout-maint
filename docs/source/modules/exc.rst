@@ -138,6 +138,11 @@
   :undoc-members:
   :inherited-members:
 
+.. autoclass:: pyogp.lib.base.exc.Deprecated
+  :members:
+  :undoc-members:
+  :inherited-members:
+
 .. autoclass:: pyogp.lib.base.exc.UserRezFailed
   :members:
   :undoc-members:

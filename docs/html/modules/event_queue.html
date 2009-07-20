@@ -83,7 +83,7 @@
 <dl class="class">
 <dt id="pyogp.lib.base.event_queue.EventQueueClient">
 <em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.event_queue.</tt><tt class="descname">EventQueueClient</tt><big>(</big><em>capability=None</em>, <em>settings=None</em>, <em>packet_handler=None</em>, <em>region=None</em>, <em>event_queue_handler=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueClient" title="Permalink to this definition">¶</a></dt>
+class </em><tt class="descclassname">pyogp.lib.base.event_queue.</tt><tt class="descname">EventQueueClient</tt><big>(</big><em>capability=None</em>, <em>settings=None</em>, <em>message_handler=None</em>, <em>region=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>handles an event queue of either an agent domain or a simulator</p>
 <p>Initialize the event queue client class
 &gt;&gt;&gt; client = EventQueueClient()</p>
@@ -100,49 +100,12 @@ Tests: tests/test_event_queue.py</p>
 <dl class="method">
 <dt id="pyogp.lib.base.event_queue.EventQueueClient.start">
 <tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueClient.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd>spawns a coroutine connecting to the event queue on the target</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.event_queue.EventQueueClient.stop">
 <tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueClient.stop" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="pyogp.lib.base.event_queue.EventQueueHandler">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.event_queue.</tt><tt class="descname">EventQueueHandler</tt><big>(</big><em>settings=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p>general class handling individual packets</p>
-<p>i do nothing</p>
-<dl class="method">
-<dt id="pyogp.lib.base.event_queue.EventQueueHandler.is_packet_handled">
-<tt class="descname">is_packet_handled</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueHandler.is_packet_handled" title="Permalink to this definition">¶</a></dt>
-<dd><p>if the data is being monitored, return True, otherwise, return False</p>
-<p>this can allow us to skip parsing inbound packets if no one is watching a particular one</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="pyogp.lib.base.event_queue.EventQueueReceivedNotifier">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.event_queue.</tt><tt class="descname">EventQueueReceivedNotifier</tt><big>(</big><em>name</em>, <em>settings</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueReceivedNotifier" title="Permalink to this definition">¶</a></dt>
-<dd><p>received TestMessage packet</p>
-<dl class="method">
-<dt id="pyogp.lib.base.event_queue.EventQueueReceivedNotifier.received">
-<tt class="descname">received</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueReceivedNotifier.received" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.event_queue.EventQueueReceivedNotifier.subscribe">
-<tt class="descname">subscribe</tt><big>(</big><em>*args</em>, <em>**kwdargs</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueReceivedNotifier.subscribe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.event_queue.EventQueueReceivedNotifier.unsubscribe">
-<tt class="descname">unsubscribe</tt><big>(</big><em>*args</em>, <em>**kwdargs</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.event_queue.EventQueueReceivedNotifier.unsubscribe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd>trigger the event queue to stop communicating with the simulator</dd></dl>
 
 </dd></dl>
 

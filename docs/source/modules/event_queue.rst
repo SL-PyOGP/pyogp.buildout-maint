@@ -8,13 +8,3 @@
   :undoc-members:
   :inherited-members:
 
-.. autoclass:: pyogp.lib.base.event_queue.EventQueueHandler
-  :members:
-  :undoc-members:
-  :inherited-members:
-
-.. autoclass:: pyogp.lib.base.event_queue.EventQueueReceivedNotifier
-  :members:
-  :undoc-members:
-  :inherited-members:
-

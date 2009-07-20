@@ -81,56 +81,10 @@
   <div class="section" id="module-pyogp.lib.base.groups">
 <h1><tt class="xref docutils literal"><span class="pre">groups</span></tt><a class="headerlink" href="#module-pyogp.lib.base.groups" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="pyogp.lib.base.groups.ChatterBoxSessionEventReply_Message">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descname">ChatterBoxSessionEventReply_Message</tt><big>(</big><em>message_data</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.ChatterBoxSessionEventReply_Message" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="class">
-<dt id="pyogp.lib.base.groups.Group">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descname">Group</tt><big>(</big><em>AcceptNotices=None</em>, <em>GroupPowers=None</em>, <em>GroupID=None</em>, <em>GroupName=None</em>, <em>ListInProfile=None</em>, <em>Contribution=None</em>, <em>GroupInsigniaID=None</em>, <em>agent=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group" title="Permalink to this definition">¶</a></dt>
-<dd><p>representation of a group</p>
-<dl class="method">
-<dt id="pyogp.lib.base.groups.Group.activate_group">
-<tt class="descname">activate_group</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.activate_group" title="Permalink to this definition">¶</a></dt>
-<dd>set this group as active</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.groups.Group.chat">
-<tt class="descname">chat</tt><big>(</big><em>Message=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.chat" title="Permalink to this definition">¶</a></dt>
-<dd><p>sends an instant message to another avatar</p>
-<p>wraps send_ImprovedInstantMessage with some handy defaults</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.groups.Group.handle_inbound_chat">
-<tt class="descname">handle_inbound_chat</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.handle_inbound_chat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.groups.Group.request_join_group_chat">
-<tt class="descname">request_join_group_chat</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.request_join_group_chat" title="Permalink to this definition">¶</a></dt>
-<dd>sends an ImprovedInstantMessage packet with the atributes necessary to join a group chat</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.groups.Group.update_properties">
-<tt class="descname">update_properties</tt><big>(</big><em>properties</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.update_properties" title="Permalink to this definition">¶</a></dt>
-<dd>takes a dictionary of attribute:value and makes it so</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="pyogp.lib.base.groups.ChatterBoxSessionAgentListUpdates_Message">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descname">ChatterBoxSessionAgentListUpdates_Message</tt><big>(</big><em>message_data</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.ChatterBoxSessionAgentListUpdates_Message" title="Permalink to this definition">¶</a></dt>
-<dd>incomplete implementation</dd></dl>
-
-<dl class="class">
 <dt id="pyogp.lib.base.groups.MockChatInterface">
 <em class="property">
 class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descname">MockChatInterface</tt><big>(</big><em>agent</em>, <em>chat_handler</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.MockChatInterface" title="Permalink to this definition">¶</a></dt>
-<dd><p>a super simple chat interface for testing</p>
+<dd><p>a super simple chat interface for testing group chat in a console</p>
 <dl class="method">
 <dt id="pyogp.lib.base.groups.MockChatInterface.data_watcher">
 <tt class="descname">data_watcher</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.MockChatInterface.data_watcher" title="Permalink to this definition">¶</a></dt>
@@ -147,12 +101,6 @@ class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descn
 <dd></dd></dl>
 
 </dd></dl>
-
-<dl class="class">
-<dt id="pyogp.lib.base.groups.ChatterBoxSessionStartReply_Message">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descname">ChatterBoxSessionStartReply_Message</tt><big>(</big><em>message_data</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.ChatterBoxSessionStartReply_Message" title="Permalink to this definition">¶</a></dt>
-<dd>incomplete implementation</dd></dl>
 
 <dl class="class">
 <dt id="pyogp.lib.base.groups.GroupManager">
@@ -172,6 +120,11 @@ class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descn
 <dd><p>sends a message to the agent&#8217;s current region requesting to create a group</p>
 <p>enables a callback (which should be unsubscribed from once we get a response)</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.groups.GroupManager.enable_callbacks">
+<tt class="descname">enable_callbacks</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.GroupManager.enable_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd>enables the callback handlers for this GroupManager</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.groups.GroupManager.get_group">
@@ -224,6 +177,16 @@ class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descn
 <dd>the simulator tells us if joining a group was a success.</dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.groups.GroupManager.send_ActivateGroup">
+<tt class="descname">send_ActivateGroup</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>group_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.GroupManager.send_ActivateGroup" title="Permalink to this definition">¶</a></dt>
+<dd>sends an ActivateGroup message to the host simulator</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.groups.GroupManager.send_JoinGroupRequest">
+<tt class="descname">send_JoinGroupRequest</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>group_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.GroupManager.send_JoinGroupRequest" title="Permalink to this definition">¶</a></dt>
+<dd>sends a JoinGroupRequest message to the hsot simulator</dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.groups.GroupManager.store_group">
 <tt class="descname">store_group</tt><big>(</big><em>_group</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.GroupManager.store_group" title="Permalink to this definition">¶</a></dt>
 <dd>append to or replace a group in self.group_store</dd></dl>
@@ -246,10 +209,43 @@ class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descn
 </dd></dl>
 
 <dl class="class">
-<dt id="pyogp.lib.base.groups.ChatterBoxInvitation_Message">
+<dt id="pyogp.lib.base.groups.Group">
 <em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descname">ChatterBoxInvitation_Message</tt><big>(</big><em>session_name=None</em>, <em>from_name=None</em>, <em>session_id=None</em>, <em>_type=None</em>, <em>region_id=None</em>, <em>offline=None</em>, <em>timestamp=None</em>, <em>ttl=None</em>, <em>to_id=None</em>, <em>source=None</em>, <em>from_group=None</em>, <em>position=None</em>, <em>parent_estate_id=None</em>, <em>message=None</em>, <em>binary_bucket=None</em>, <em>_id=None</em>, <em>god_level=None</em>, <em>limited_to_estate=None</em>, <em>check_estate=None</em>, <em>agent_id=None</em>, <em>from_id=None</em>, <em>ChatterBoxInvitation_Data=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.ChatterBoxInvitation_Message" title="Permalink to this definition">¶</a></dt>
-<dd>a group chat message sent over the event queue</dd></dl>
+class </em><tt class="descclassname">pyogp.lib.base.groups.</tt><tt class="descname">Group</tt><big>(</big><em>AcceptNotices=None</em>, <em>GroupPowers=None</em>, <em>GroupID=None</em>, <em>GroupName=None</em>, <em>ListInProfile=None</em>, <em>Contribution=None</em>, <em>GroupInsigniaID=None</em>, <em>agent=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group" title="Permalink to this definition">¶</a></dt>
+<dd><p>representation of a group</p>
+<dl class="method">
+<dt id="pyogp.lib.base.groups.Group.activate_group">
+<tt class="descname">activate_group</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.activate_group" title="Permalink to this definition">¶</a></dt>
+<dd>set this group as active</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.groups.Group.chat">
+<tt class="descname">chat</tt><big>(</big><em>Message=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>sends an instant message to another avatar</p>
+<p>wraps send_ImprovedInstantMessage with some handy defaults</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.groups.Group.handle_inbound_chat">
+<tt class="descname">handle_inbound_chat</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.handle_inbound_chat" title="Permalink to this definition">¶</a></dt>
+<dd>parses an incoming chat message from a group</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.groups.Group.request_join_group_chat">
+<tt class="descname">request_join_group_chat</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.request_join_group_chat" title="Permalink to this definition">¶</a></dt>
+<dd>sends an ImprovedInstantMessage packet with the atributes necessary to join a group chat</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.groups.Group.send_ActivateGroup">
+<tt class="descname">send_ActivateGroup</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>group_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.send_ActivateGroup" title="Permalink to this definition">¶</a></dt>
+<dd>send an ActivateGroup message to the host simulator</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.groups.Group.update_properties">
+<tt class="descname">update_properties</tt><big>(</big><em>properties</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.groups.Group.update_properties" title="Permalink to this definition">¶</a></dt>
+<dd>takes a dictionary of attribute:value and makes it so</dd></dl>
+
+</dd></dl>
 
 </div>
 

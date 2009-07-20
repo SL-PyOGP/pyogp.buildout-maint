@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Pyogp v0.1 documentation" href="../index.html" />
     <link rel="up" title="Modules" href="../modules.html" />
-    <link rel="next" title="net" href="net.html" />
+    <link rel="next" title="message_dot_xml" href="message_dot_xml.html" />
     <link rel="prev" title="login" href="login.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
           <a href="../modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="net.html" title="net"
+          <a href="message_dot_xml.html" title="message_dot_xml"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="login.html" title="login"
@@ -50,8 +50,8 @@
             <p class="topless"><a href="login.html"
                                   title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">login</span></tt></a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="net.html"
-                                  title="next chapter"><tt class="docutils literal"><span class="pre">net</span></tt></a></p>
+            <p class="topless"><a href="message_dot_xml.html"
+                                  title="next chapter"><tt class="docutils literal"><span class="pre">message_dot_xml</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="../_sources/modules/message.txt"
@@ -81,6 +81,35 @@
   <div class="section" id="module-pyogp.lib.base.message.message">
 <h1><tt class="xref docutils literal"><span class="pre">message</span></tt><a class="headerlink" href="#module-pyogp.lib.base.message.message" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="pyogp.lib.base.message.message.Block">
+<em class="property">
+class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt class="descname">Block</tt><big>(</big><em>name</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Block" title="Permalink to this definition">¶</a></dt>
+<dd><p>base representation of a block</p>
+<p>Block expects a name, and kwargs for variables (var_name = value)</p>
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.Block.add_variable">
+<tt class="descname">add_variable</tt><big>(</big><em>var</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Block.add_variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.Block.get_variable">
+<tt class="descname">get_variable</tt><big>(</big><em>var_name</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Block.get_variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.Block.get_variables">
+<tt class="descname">get_variables</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Block.get_variables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyogp.lib.base.message.message.PackFlags">
+<em class="property">
+class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt class="descname">PackFlags</tt><a class="headerlink" href="#pyogp.lib.base.message.message.PackFlags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
 <dt id="pyogp.lib.base.message.message.MsgData">
 <em class="property">
 class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt class="descname">MsgData</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.MsgData" title="Permalink to this definition">¶</a></dt>
@@ -104,10 +133,63 @@ serialized and sent.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="pyogp.lib.base.message.message.MessageBase">
+<em class="property">
+class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt class="descname">MessageBase</tt><big>(</big><em>name</em>, <em>*args</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.MessageBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>base representation of a message&#8217;s name, blocks, and variables.</p>
+<p>MessageBase expects a name, and <a href="#id1"><span class="problematic" id="id2">*</span></a>args consisting of Block() instances 
+(which takes a name and <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs)</p>
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.MessageBase.add_block">
+<tt class="descname">add_block</tt><big>(</big><em>block</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.MessageBase.add_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.MessageBase.add_data">
+<tt class="descname">add_data</tt><big>(</big><em>block_name</em>, <em>var_name</em>, <em>data</em>, <em>data_size</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.MessageBase.add_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.MessageBase.get_block">
+<tt class="descname">get_block</tt><big>(</big><em>block_name</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.MessageBase.get_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.MessageBase.parse_blocks">
+<tt class="descname">parse_blocks</tt><big>(</big><em>block_list</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.MessageBase.parse_blocks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyogp.lib.base.message.message.Variable">
+<em class="property">
+class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt class="descname">Variable</tt><big>(</big><em>name</em>, <em>data</em>, <em>var_type=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>base representation of a Variable (purely a convenience alias of MsgVariableData)</p>
+<p>Variable expects a name, and data</p>
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.Variable.get_data_as_string">
+<tt class="descname">get_data_as_string</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Variable.get_data_as_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.Variable.get_var_type_as_string">
+<tt class="descname">get_var_type_as_string</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Variable.get_var_type_as_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="pyogp.lib.base.message.message.Message">
 <em class="property">
 class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt class="descname">Message</tt><big>(</big><em>name</em>, <em>*args</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Message" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<dd><p>an active message</p>
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.Message.add_ack">
+<tt class="descname">add_ack</tt><big>(</big><em>packet_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Message.add_ack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.message.message.Message.add_block">
 <tt class="descname">add_block</tt><big>(</big><em>block</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Message.add_block" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -118,8 +200,18 @@ class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt cla
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.message.message.Message.data">
+<tt class="descname">data</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Message.data" title="Permalink to this definition">¶</a></dt>
+<dd>a string representation of a packet</dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.message.message.Message.get_block">
 <tt class="descname">get_block</tt><big>(</big><em>block_name</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Message.get_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.message.Message.get_var">
+<tt class="descname">get_var</tt><big>(</big><em>block</em>, <em>variable</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Message.get_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -170,27 +262,6 @@ serialized and sent.</p>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="pyogp.lib.base.message.message.Block">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt class="descname">Block</tt><big>(</big><em>name</em>, <em>**kwds</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Block" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="pyogp.lib.base.message.message.Block.add_variable">
-<tt class="descname">add_variable</tt><big>(</big><em>var</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Block.add_variable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.message.message.Block.get_variable">
-<tt class="descname">get_variable</tt><big>(</big><em>var_name</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Block.get_variable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.message.message.Block.get_variables">
-<tt class="descname">get_variables</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.message.Block.get_variables" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 </div>
 
 
@@ -209,7 +280,7 @@ class </em><tt class="descclassname">pyogp.lib.base.message.message.</tt><tt cla
           <a href="../modindex.html" title="Global Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="net.html" title="net"
+          <a href="message_dot_xml.html" title="message_dot_xml"
              >next</a> |</li>
         <li class="right" >
           <a href="login.html" title="login"

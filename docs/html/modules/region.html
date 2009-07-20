@@ -83,7 +83,7 @@
 <dl class="class">
 <dt id="pyogp.lib.base.region.Region">
 <em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.region.</tt><tt class="descname">Region</tt><big>(</big><em>global_x=0</em>, <em>global_y=0</em>, <em>seed_capability_url=None</em>, <em>udp_blacklist=None</em>, <em>sim_ip=None</em>, <em>sim_port=None</em>, <em>circuit_code=None</em>, <em>agent=None</em>, <em>settings=None</em>, <em>packet_handler=None</em>, <em>event_queue_handler=None</em>, <em>handle=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region" title="Permalink to this definition">¶</a></dt>
+class </em><tt class="descclassname">pyogp.lib.base.region.</tt><tt class="descname">Region</tt><big>(</big><em>global_x=0</em>, <em>global_y=0</em>, <em>seed_capability_url=None</em>, <em>udp_blacklist=None</em>, <em>sim_ip=None</em>, <em>sim_port=None</em>, <em>circuit_code=None</em>, <em>agent=None</em>, <em>settings=None</em>, <em>message_handler=None</em>, <em>handle=None</em>, <em>events_handler=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region" title="Permalink to this definition">¶</a></dt>
 <dd><p>a region container</p>
 <p>The Region class is a container for region specific data.
 It is also a nice place for convenience code.</p>
@@ -110,6 +110,11 @@ Tests: tests/region.txt, tests/test_region.py</p>
 <dd>connect to the a child region udp circuit code</dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.region.Region.enable_callbacks">
+<tt class="descname">enable_callbacks</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.enable_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd>enables the callback handles for this Region</dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.region.Region.enable_child_simulator">
 <tt class="descname">enable_child_simulator</tt><big>(</big><em>IP</em>, <em>Port</em>, <em>Handle</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.enable_child_simulator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -118,6 +123,17 @@ Tests: tests/region.txt, tests/test_region.py</p>
 <dt id="pyogp.lib.base.region.Region.enqueue_message">
 <tt class="descname">enqueue_message</tt><big>(</big><em>packet</em>, <em>reliable=False</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.enqueue_message" title="Permalink to this definition">¶</a></dt>
 <dd>queues packets for the messaging system to send</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pyogp.lib.base.region.Region.handle_to_xy">
+<em class="property">
+static </em><tt class="descname">handle_to_xy</tt><big>(</big><em>handle</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.handle_to_xy" title="Permalink to this definition">¶</a></dt>
+<dd>Convert a handle into an x,y region location. Handle can be an int or binary string.</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.region.Region.kill_coroutines">
+<tt class="descname">kill_coroutines</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.kill_coroutines" title="Permalink to this definition">¶</a></dt>
+<dd>trigger to end processes spawned by the child regions</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.region.Region.logout">
@@ -136,22 +152,22 @@ Tests: tests/region.txt, tests/test_region.py</p>
 
 <dl class="method">
 <dt id="pyogp.lib.base.region.Region.sendAgentUpdate">
-<tt class="descname">sendAgentUpdate</tt><big>(</big><em>BodyRotation=(0.0</em>, <em>0.0</em>, <em>0.0</em>, <em>1.0)</em>, <em>HeadRotation=(0.0</em>, <em>0.0</em>, <em>0.0</em>, <em>1.0)</em>, <em>State=0</em>, <em>CameraCenter=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>CameraAtAxis=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>CameraLeftAxis=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>CameraUpAxis=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>Far=0</em>, <em>ControlFlags=0</em>, <em>Flags=0</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendAgentUpdate" title="Permalink to this definition">¶</a></dt>
-<dd>sends an AgentUpdate packet</dd></dl>
+<tt class="descname">sendAgentUpdate</tt><big>(</big><em>AgentID</em>, <em>SessionID</em>, <em>BodyRotation=(0.0</em>, <em>0.0</em>, <em>0.0</em>, <em>1.0)</em>, <em>HeadRotation=(0.0</em>, <em>0.0</em>, <em>0.0</em>, <em>1.0)</em>, <em>State=0</em>, <em>CameraCenter=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>CameraAtAxis=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>CameraLeftAxis=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>CameraUpAxis=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>Far=0</em>, <em>ControlFlags=0</em>, <em>Flags=0</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendAgentUpdate" title="Permalink to this definition">¶</a></dt>
+<dd>sends an AgentUpdate packet to <em>this</em> simulator</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.region.Region.sendCompleteAgentMovement">
-<tt class="descname">sendCompleteAgentMovement</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendCompleteAgentMovement" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">sendCompleteAgentMovement</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>circuit_code</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendCompleteAgentMovement" title="Permalink to this definition">¶</a></dt>
 <dd>initializing on a simulator requires sending CompleteAgentMovement, also required on teleport</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.region.Region.sendCompletePingCheck">
-<tt class="descname">sendCompletePingCheck</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendCompletePingCheck" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">sendCompletePingCheck</tt><big>(</big><em>PingID</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendCompletePingCheck" title="Permalink to this definition">¶</a></dt>
 <dd>sends a CompletePingCheck packet</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.region.Region.sendRegionHandshakeReply">
-<tt class="descname">sendRegionHandshakeReply</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendRegionHandshakeReply" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">sendRegionHandshakeReply</tt><big>(</big><em>AgentID</em>, <em>SessionID</em>, <em>Flags=0</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendRegionHandshakeReply" title="Permalink to this definition">¶</a></dt>
 <dd>sends a RegionHandshake packet</dd></dl>
 
 <dl class="method">
@@ -161,8 +177,13 @@ Tests: tests/region.txt, tests/test_region.py</p>
 
 <dl class="method">
 <dt id="pyogp.lib.base.region.Region.sendUseCircuitCode">
-<tt class="descname">sendUseCircuitCode</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendUseCircuitCode" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">sendUseCircuitCode</tt><big>(</big><em>circuit_code</em>, <em>session_id</em>, <em>agent_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.sendUseCircuitCode" title="Permalink to this definition">¶</a></dt>
 <dd>initializing on a simulator requires announcing the circuit code an agent will use</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.region.Region.send_LogoutRequest">
+<tt class="descname">send_LogoutRequest</tt><big>(</big><em>agent_id</em>, <em>session_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.send_LogoutRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a LogoutRequest message to the host simulator</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.region.Region.send_message">
@@ -178,6 +199,12 @@ Tests: tests/region.txt, tests/test_region.py</p>
 <dt id="pyogp.lib.base.region.Region.send_reliable">
 <tt class="descname">send_reliable</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.send_reliable" title="Permalink to this definition">¶</a></dt>
 <dd>send a reliable packet to the host</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pyogp.lib.base.region.Region.xy_to_handle">
+<em class="property">
+static </em><tt class="descname">xy_to_handle</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.region.Region.xy_to_handle" title="Permalink to this definition">¶</a></dt>
+<dd>Convert an x, y region location into a 64-bit handle</dd></dl>
 
 </dd></dl>
 

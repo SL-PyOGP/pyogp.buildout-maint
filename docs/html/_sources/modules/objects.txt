@@ -8,7 +8,7 @@
   :undoc-members:
   :inherited-members:
 
-.. autoclass:: pyogp.lib.base.objects.Objects
+.. autoclass:: pyogp.lib.base.objects.ObjectManager
   :members:
   :undoc-members:
   :inherited-members:

@@ -81,29 +81,110 @@
   <div class="section" id="module-pyogp.lib.base.inventory">
 <h1><tt class="xref docutils literal"><span class="pre">inventory</span></tt><a class="headerlink" href="#module-pyogp.lib.base.inventory" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="pyogp.lib.base.inventory.InventoryFolder">
+<dt id="pyogp.lib.base.inventory.InventoryManager">
 <em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">InventoryFolder</tt><big>(</big><em>Name=None</em>, <em>FolderID=None</em>, <em>ParentID=None</em>, <em>Version=None</em>, <em>Type=None</em>, <em>AgentID=00000000-0000-0000-0000-000000000000</em>, <em>Descendents=0</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder" title="Permalink to this definition">¶</a></dt>
-<dd><p>represents an Inventory folder</p>
+class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">InventoryManager</tt><big>(</big><em>agent=None</em>, <em>settings=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>is an inventory container</p>
 <p>Initialize the event queue client class
-&gt;&gt;&gt; inventoryfolder = InventoryFolder()</p>
-<p>Sample implementations: inventory.py
+&gt;&gt;&gt; inventory = InventoryManager()</p>
+<p>Sample implementations: agent.py
 Tests: tests/test_inventory.py</p>
-<p>initialize the inventory folder</p>
+<p>set up the inventory manager</p>
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.InventoryFolder.move">
-<tt class="descname">move</tt><big>(</big><em>agent</em>, <em>parent_id</em>, <em>restamp=False</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.move" title="Permalink to this definition">¶</a></dt>
-<dd>reparents this inventory folder</dd></dl>
+<dt id="pyogp.lib.base.inventory.InventoryManager.confirm_inventory_offer">
+<tt class="descname">confirm_inventory_offer</tt><big>(</big><em>FromAgentID</em>, <em>FromAgentName</em>, <em>InventoryName</em>, <em>ID</em>, <em>AssetType</em>, <em>ItemID</em>, <em>accept</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.confirm_inventory_offer" title="Permalink to this definition">¶</a></dt>
+<dd>sends an ImprovedInstantMessage packet accepting or declining an inventory offer</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.InventoryFolder.purge_descendents">
-<tt class="descname">purge_descendents</tt><big>(</big><em>agent</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.purge_descendents" title="Permalink to this definition">¶</a></dt>
-<dd>removes inventory from this folder, by unlinking the inventory from this parent folder</dd></dl>
+<dt id="pyogp.lib.base.inventory.InventoryManager.display_folder_contents">
+<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.display_folder_contents" title="Permalink to this definition">¶</a></dt>
+<dd>returns a list of the local representation of a folder&#8217;s contents</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.InventoryFolder.remove">
-<tt class="descname">remove</tt><big>(</big><em>agent</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.remove" title="Permalink to this definition">¶</a></dt>
-<dd>removes this inventory folder</dd></dl>
+<dt id="pyogp.lib.base.inventory.InventoryManager.enable_callbacks">
+<tt class="descname">enable_callbacks</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.enable_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd>enable monitors for certain inventory related packet events</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.give_inventory">
+<tt class="descname">give_inventory</tt><big>(</big><em>ItemID=None</em>, <em>agent_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.give_inventory" title="Permalink to this definition">¶</a></dt>
+<dd><p>offers another agent the specified inventory item</p>
+<p>searches the local inventory for the specified ItemID
+given a match, sends an ImprovedInventoryMessage packet to the specified AgentID</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.handle_inventory_offer">
+<tt class="descname">handle_inventory_offer</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.handle_inventory_offer" title="Permalink to this definition">¶</a></dt>
+<dd>parses and handles an incoming inventory offer</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.onBulkUpdateInventory">
+<tt class="descname">onBulkUpdateInventory</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.onBulkUpdateInventory" title="Permalink to this definition">¶</a></dt>
+<dd>handle the inventory data being delivered in the BullkUpdateInventory packet</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.onFetchInventoryReply">
+<tt class="descname">onFetchInventoryReply</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.onFetchInventoryReply" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.onInventoryDescendents">
+<tt class="descname">onInventoryDescendents</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.onInventoryDescendents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.request_inventory_by_id">
+<tt class="descname">request_inventory_by_id</tt><big>(</big><em>id_list=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.request_inventory_by_id" title="Permalink to this definition">¶</a></dt>
+<dd>ask for inventory data by id via a list</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.request_known_folder_contents">
+<tt class="descname">request_known_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.request_known_folder_contents" title="Permalink to this definition">¶</a></dt>
+<dd>send requests to the server for contents of all known folders</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.search_inventory">
+<tt class="descname">search_inventory</tt><big>(</big><em>folder_list=</em><span class="optional">[</span><span class="optional">]</span>, <em>item_id=None</em>, <em>name=None</em>, <em>match_list=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.search_inventory" title="Permalink to this definition">¶</a></dt>
+<dd><p>search through all inventory folders for an id(uuid) or Name, and
+return a list of matching InventoryItems or InventoryFolders</p>
+<p>recursive search, based on folder_id. if no folder id is specified
+look through everything in self.folders</p>
+<p>This does not request inventory from the grid. It could, were we to go about enabling this...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.search_inventory_folder">
+<tt class="descname">search_inventory_folder</tt><big>(</big><em>folder_id</em>, <em>_id=None</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.search_inventory_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>search an inventory folder for _id or name</p>
+<p>return a list of matches</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.sendFetchInventoryDescendentsRequest">
+<tt class="descname">sendFetchInventoryDescendentsRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.sendFetchInventoryDescendentsRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the grid for folder contents</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.sendFetchInventoryRequest">
+<tt class="descname">sendFetchInventoryRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.sendFetchInventoryRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the grid for inventory items in folder</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.sendFetchLibDescendentsRequest">
+<tt class="descname">sendFetchLibDescendentsRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.sendFetchLibDescendentsRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the grid for library folder contents</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.sendFetchLibRequest">
+<tt class="descname">sendFetchLibRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the grid for library items</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.send_FetchInventory">
+<tt class="descname">send_FetchInventory</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>owner_id</em>, <em>inventory_ids</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.send_FetchInventory" title="Permalink to this definition">¶</a></dt>
+<dd>send a FetchInventory message to the host simulator 
+each of the ids in inventory_ids will be sent in it&#8217;s own InventoryData block</dd></dl>
 
 </dd></dl>
 
@@ -138,71 +219,65 @@ and then send an UpdateInventoryItem packet</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="pyogp.lib.base.inventory.Inventory">
+<dt id="pyogp.lib.base.inventory.UDP_Inventory">
 <em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">Inventory</tt><big>(</big><em>agent=None</em>, <em>settings=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory" title="Permalink to this definition">¶</a></dt>
-<dd><p>is an inventory container</p>
-<p>Initialize the event queue client class
-&gt;&gt;&gt; inventory = Inventory()</p>
-<p>Sample implementations: agent.py
-Tests: tests/test_inventory.py</p>
-<p>set up the inventory manager</p>
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.confirm_inventory_offer">
-<tt class="descname">confirm_inventory_offer</tt><big>(</big><em>FromAgentID</em>, <em>FromAgentName</em>, <em>InventoryName</em>, <em>ID</em>, <em>AssetType</em>, <em>ItemID</em>, <em>accept</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.confirm_inventory_offer" title="Permalink to this definition">¶</a></dt>
+class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">UDP_Inventory</tt><big>(</big><em>agent</em>, <em>settings=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.confirm_inventory_offer">
+<tt class="descname">confirm_inventory_offer</tt><big>(</big><em>FromAgentID</em>, <em>FromAgentName</em>, <em>InventoryName</em>, <em>ID</em>, <em>AssetType</em>, <em>ItemID</em>, <em>accept</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.confirm_inventory_offer" title="Permalink to this definition">¶</a></dt>
 <dd>sends an ImprovedInstantMessage packet accepting or declining an inventory offer</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.display_folder_contents">
-<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.display_folder_contents" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents">
+<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents" title="Permalink to this definition">¶</a></dt>
 <dd>returns a list of the local representation of a folder&#8217;s contents</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.enable_callbacks">
-<tt class="descname">enable_callbacks</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.enable_callbacks" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.enable_callbacks">
+<tt class="descname">enable_callbacks</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.enable_callbacks" title="Permalink to this definition">¶</a></dt>
 <dd>enable monitors for certain inventory related packet events</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.give_inventory">
-<tt class="descname">give_inventory</tt><big>(</big><em>ItemID=None</em>, <em>agent_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.give_inventory" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.give_inventory">
+<tt class="descname">give_inventory</tt><big>(</big><em>ItemID=None</em>, <em>agent_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.give_inventory" title="Permalink to this definition">¶</a></dt>
 <dd><p>offers another agent the specified inventory item</p>
 <p>searches the local inventory for the specified ItemID
 given a match, sends an ImprovedInventoryMessage packet to the specified AgentID</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.handle_inventory_offer">
-<tt class="descname">handle_inventory_offer</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.handle_inventory_offer" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.handle_inventory_offer">
+<tt class="descname">handle_inventory_offer</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.handle_inventory_offer" title="Permalink to this definition">¶</a></dt>
 <dd>parses and handles an incoming inventory offer</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.onBulkUpdateInventory">
-<tt class="descname">onBulkUpdateInventory</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.onBulkUpdateInventory" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.onBulkUpdateInventory">
+<tt class="descname">onBulkUpdateInventory</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.onBulkUpdateInventory" title="Permalink to this definition">¶</a></dt>
 <dd>handle the inventory data being delivered in the BullkUpdateInventory packet</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.onFetchInventoryReply">
-<tt class="descname">onFetchInventoryReply</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.onFetchInventoryReply" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.onFetchInventoryReply">
+<tt class="descname">onFetchInventoryReply</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.onFetchInventoryReply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.onInventoryDescendents">
-<tt class="descname">onInventoryDescendents</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.onInventoryDescendents" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.onInventoryDescendents">
+<tt class="descname">onInventoryDescendents</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.onInventoryDescendents" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.request_inventory_by_id">
-<tt class="descname">request_inventory_by_id</tt><big>(</big><em>id_list=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.request_inventory_by_id" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.request_inventory_by_id">
+<tt class="descname">request_inventory_by_id</tt><big>(</big><em>id_list=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.request_inventory_by_id" title="Permalink to this definition">¶</a></dt>
 <dd>ask for inventory data by id via a list</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.request_known_folder_contents">
-<tt class="descname">request_known_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.request_known_folder_contents" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.request_known_folder_contents">
+<tt class="descname">request_known_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.request_known_folder_contents" title="Permalink to this definition">¶</a></dt>
 <dd>send requests to the server for contents of all known folders</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.search_inventory">
-<tt class="descname">search_inventory</tt><big>(</big><em>folder_list=</em><span class="optional">[</span><span class="optional">]</span>, <em>item_id=None</em>, <em>name=None</em>, <em>match_list=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.search_inventory" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.search_inventory">
+<tt class="descname">search_inventory</tt><big>(</big><em>folder_list=</em><span class="optional">[</span><span class="optional">]</span>, <em>item_id=None</em>, <em>name=None</em>, <em>match_list=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.search_inventory" title="Permalink to this definition">¶</a></dt>
 <dd><p>search through all inventory folders for an id(uuid) or Name, and
 return a list of matching InventoryItems or InventoryFolders</p>
 <p>recursive search, based on folder_id. if no folder id is specified
@@ -211,31 +286,37 @@ look through everything in self.folders</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.search_inventory_folder">
-<tt class="descname">search_inventory_folder</tt><big>(</big><em>folder_id</em>, <em>_id=None</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.search_inventory_folder" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.search_inventory_folder">
+<tt class="descname">search_inventory_folder</tt><big>(</big><em>folder_id</em>, <em>_id=None</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.search_inventory_folder" title="Permalink to this definition">¶</a></dt>
 <dd><p>search an inventory folder for _id or name</p>
 <p>return a list of matches</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.sendFetchInventoryDescendentsRequest">
-<tt class="descname">sendFetchInventoryDescendentsRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.sendFetchInventoryDescendentsRequest" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchInventoryDescendentsRequest">
+<tt class="descname">sendFetchInventoryDescendentsRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchInventoryDescendentsRequest" title="Permalink to this definition">¶</a></dt>
 <dd>send a request to the grid for folder contents</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.sendFetchInventoryRequest">
-<tt class="descname">sendFetchInventoryRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.sendFetchInventoryRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the grid for inventory items in folder</dd></dl>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchInventoryRequest">
+<tt class="descname">sendFetchInventoryRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchInventoryRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the grid for folder attributes</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.sendFetchLibDescendentsRequest">
-<tt class="descname">sendFetchLibDescendentsRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.sendFetchLibDescendentsRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the grid for library folder contents</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.Inventory.sendFetchLibRequest">
-<tt class="descname">sendFetchLibRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.Inventory.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibDescendentsRequest">
+<tt class="descname">sendFetchLibDescendentsRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibDescendentsRequest" title="Permalink to this definition">¶</a></dt>
 <dd>send a request to the grid for library items</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibRequest">
+<tt class="descname">sendFetchLibRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
+<dd>send a request to the grid for library items</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.send_FetchInventory">
+<tt class="descname">send_FetchInventory</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>owner_id</em>, <em>inventory_ids</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.send_FetchInventory" title="Permalink to this definition">¶</a></dt>
+<dd>send a FetchInventory message to the host simulator 
+each of the ids in inventory_ids will be sent in it&#8217;s own InventoryData block</dd></dl>
 
 </dd></dl>
 
@@ -334,101 +415,53 @@ look through everything in self.folders</p>
 <tt class="descname">sendFetchLibRequest</tt><big>(</big><em>folder_id</em>, <em>item_ids=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
 <dd>send a request to the grid for library item attributes</dd></dl>
 
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.AIS.send_FetchInventory">
+<tt class="descname">send_FetchInventory</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>owner_id</em>, <em>inventory_ids</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.send_FetchInventory" title="Permalink to this definition">¶</a></dt>
+<dd>send a FetchInventory message to the host simulator 
+each of the ids in inventory_ids will be sent in it&#8217;s own InventoryData block</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory">
+<dt id="pyogp.lib.base.inventory.InventoryFolder">
 <em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">UDP_Inventory</tt><big>(</big><em>agent</em>, <em>settings=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.confirm_inventory_offer">
-<tt class="descname">confirm_inventory_offer</tt><big>(</big><em>FromAgentID</em>, <em>FromAgentName</em>, <em>InventoryName</em>, <em>ID</em>, <em>AssetType</em>, <em>ItemID</em>, <em>accept</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.confirm_inventory_offer" title="Permalink to this definition">¶</a></dt>
-<dd>sends an ImprovedInstantMessage packet accepting or declining an inventory offer</dd></dl>
+class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="descname">InventoryFolder</tt><big>(</big><em>Name=None</em>, <em>FolderID=None</em>, <em>ParentID=None</em>, <em>Version=None</em>, <em>Type=None</em>, <em>AgentID=00000000-0000-0000-0000-000000000000</em>, <em>Descendents=0</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>represents an Inventory folder</p>
+<p>Initialize the event queue client class
+&gt;&gt;&gt; inventoryfolder = InventoryFolder()</p>
+<p>Sample implementations: inventory.py
+Tests: tests/test_inventory.py</p>
+<p>initialize the inventory folder</p>
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryFolder.move">
+<tt class="descname">move</tt><big>(</big><em>agent</em>, <em>parent_id</em>, <em>restamp=False</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.move" title="Permalink to this definition">¶</a></dt>
+<dd>reparents this inventory folder</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents">
-<tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents" title="Permalink to this definition">¶</a></dt>
-<dd>returns a list of the local representation of a folder&#8217;s contents</dd></dl>
+<dt id="pyogp.lib.base.inventory.InventoryFolder.purge_descendents">
+<tt class="descname">purge_descendents</tt><big>(</big><em>agent</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.purge_descendents" title="Permalink to this definition">¶</a></dt>
+<dd>removes inventory from this folder, by unlinking the inventory from this parent folder</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.enable_callbacks">
-<tt class="descname">enable_callbacks</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.enable_callbacks" title="Permalink to this definition">¶</a></dt>
-<dd>enable monitors for certain inventory related packet events</dd></dl>
+<dt id="pyogp.lib.base.inventory.InventoryFolder.remove">
+<tt class="descname">remove</tt><big>(</big><em>agent</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.remove" title="Permalink to this definition">¶</a></dt>
+<dd>removes this inventory folder</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.give_inventory">
-<tt class="descname">give_inventory</tt><big>(</big><em>ItemID=None</em>, <em>agent_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.give_inventory" title="Permalink to this definition">¶</a></dt>
-<dd><p>offers another agent the specified inventory item</p>
-<p>searches the local inventory for the specified ItemID
-given a match, sends an ImprovedInventoryMessage packet to the specified AgentID</p>
-</dd></dl>
+<dt id="pyogp.lib.base.inventory.InventoryFolder.send_MoveInventoryFolder">
+<tt class="descname">send_MoveInventoryFolder</tt><big>(</big><em>agent</em>, <em>agent_id</em>, <em>session_id</em>, <em>restamp</em>, <em>folder_id</em>, <em>parent_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.send_MoveInventoryFolder" title="Permalink to this definition">¶</a></dt>
+<dd>sends a MoveInventoryFolder message to the host simulator</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.handle_inventory_offer">
-<tt class="descname">handle_inventory_offer</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.handle_inventory_offer" title="Permalink to this definition">¶</a></dt>
-<dd>parses and handles an incoming inventory offer</dd></dl>
+<dt id="pyogp.lib.base.inventory.InventoryFolder.send_PurgeInventoryDescendents">
+<tt class="descname">send_PurgeInventoryDescendents</tt><big>(</big><em>agent</em>, <em>agent_id</em>, <em>session_id</em>, <em>folder_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.send_PurgeInventoryDescendents" title="Permalink to this definition">¶</a></dt>
+<dd>send a PurgeInventoryDescendents message to the host simulator</dd></dl>
 
 <dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.onBulkUpdateInventory">
-<tt class="descname">onBulkUpdateInventory</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.onBulkUpdateInventory" title="Permalink to this definition">¶</a></dt>
-<dd>handle the inventory data being delivered in the BullkUpdateInventory packet</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.onFetchInventoryReply">
-<tt class="descname">onFetchInventoryReply</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.onFetchInventoryReply" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.onInventoryDescendents">
-<tt class="descname">onInventoryDescendents</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.onInventoryDescendents" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.request_inventory_by_id">
-<tt class="descname">request_inventory_by_id</tt><big>(</big><em>id_list=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.request_inventory_by_id" title="Permalink to this definition">¶</a></dt>
-<dd>ask for inventory data by id via a list</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.request_known_folder_contents">
-<tt class="descname">request_known_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.request_known_folder_contents" title="Permalink to this definition">¶</a></dt>
-<dd>send requests to the server for contents of all known folders</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.search_inventory">
-<tt class="descname">search_inventory</tt><big>(</big><em>folder_list=</em><span class="optional">[</span><span class="optional">]</span>, <em>item_id=None</em>, <em>name=None</em>, <em>match_list=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.search_inventory" title="Permalink to this definition">¶</a></dt>
-<dd><p>search through all inventory folders for an id(uuid) or Name, and
-return a list of matching InventoryItems or InventoryFolders</p>
-<p>recursive search, based on folder_id. if no folder id is specified
-look through everything in self.folders</p>
-<p>This does not request inventory from the grid. It could, were we to go about enabling this...</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.search_inventory_folder">
-<tt class="descname">search_inventory_folder</tt><big>(</big><em>folder_id</em>, <em>_id=None</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.search_inventory_folder" title="Permalink to this definition">¶</a></dt>
-<dd><p>search an inventory folder for _id or name</p>
-<p>return a list of matches</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchInventoryDescendentsRequest">
-<tt class="descname">sendFetchInventoryDescendentsRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchInventoryDescendentsRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the grid for folder contents</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchInventoryRequest">
-<tt class="descname">sendFetchInventoryRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchInventoryRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the grid for folder attributes</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibDescendentsRequest">
-<tt class="descname">sendFetchLibDescendentsRequest</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibDescendentsRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the grid for library items</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibRequest">
-<tt class="descname">sendFetchLibRequest</tt><big>(</big><em>item_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.sendFetchLibRequest" title="Permalink to this definition">¶</a></dt>
-<dd>send a request to the grid for library items</dd></dl>
+<dt id="pyogp.lib.base.inventory.InventoryFolder.send_RemoveInventoryFolder">
+<tt class="descname">send_RemoveInventoryFolder</tt><big>(</big><em>agent</em>, <em>agent_id</em>, <em>session_id</em>, <em>restamp</em>, <em>folder_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryFolder.send_RemoveInventoryFolder" title="Permalink to this definition">¶</a></dt>
+<dd>sends a RemoveInventoryFolder message to the host simulator</dd></dl>
 
 </dd></dl>
 

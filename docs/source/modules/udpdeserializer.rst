@@ -8,22 +8,12 @@
   :undoc-members:
   :inherited-members:
 
-.. autoclass:: pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer
-  :members:
-  :undoc-members:
-  :inherited-members:
-
 .. autoclass:: pyogp.lib.base.message.udpdeserializer.DataUnpacker
   :members:
   :undoc-members:
   :inherited-members:
 
 .. autoclass:: pyogp.lib.base.message.udpdeserializer.MsgData
-  :members:
-  :undoc-members:
-  :inherited-members:
-
-.. autoclass:: pyogp.lib.base.message.udpdeserializer.UDPPacket
   :members:
   :undoc-members:
   :inherited-members:
@@ -58,7 +48,17 @@
   :undoc-members:
   :inherited-members:
 
+.. autoclass:: pyogp.lib.base.message.udpdeserializer.Message
+  :members:
+  :undoc-members:
+  :inherited-members:
+
 .. autoclass:: pyogp.lib.base.message.udpdeserializer.MsgVariableData
+  :members:
+  :undoc-members:
+  :inherited-members:
+
+.. autoclass:: pyogp.lib.base.message.udpdeserializer.UDPMessageDeserializer
   :members:
   :undoc-members:
   :inherited-members:

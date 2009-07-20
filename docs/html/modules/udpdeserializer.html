@@ -22,7 +22,7 @@
     <link rel="top" title="Pyogp v0.1 documentation" href="../index.html" />
     <link rel="up" title="Modules" href="../modules.html" />
     <link rel="next" title="udpdispatcher" href="udpdispatcher.html" />
-    <link rel="prev" title="types" href="types.html" /> 
+    <link rel="prev" title="template_parser" href="template_parser.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +38,7 @@
           <a href="udpdispatcher.html" title="udpdispatcher"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="types.html" title="types"
+          <a href="template_parser.html" title="template_parser"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Pyogp v0.1 documentation</a> &raquo;</li>
           <li><a href="../modules.html" accesskey="U">Modules</a> &raquo;</li> 
@@ -47,8 +47,8 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
             <h4>Previous topic</h4>
-            <p class="topless"><a href="types.html"
-                                  title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">types</span></tt></a></p>
+            <p class="topless"><a href="template_parser.html"
+                                  title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">template_parser</span></tt></a></p>
             <h4>Next topic</h4>
             <p class="topless"><a href="udpdispatcher.html"
                                   title="next chapter"><tt class="docutils literal"><span class="pre">udpdispatcher</span></tt></a></p>
@@ -87,23 +87,6 @@ class </em><tt class="descclassname">pyogp.lib.base.message.udpdeserializer.</tt
 <dd></dd></dl>
 
 <dl class="class">
-<dt id="pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.message.udpdeserializer.</tt><tt class="descname">UDPPacketDeserializer</tt><big>(</big><em>packet_handler=None</em>, <em>settings=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer.deserialize">
-<tt class="descname">deserialize</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer.deserialize" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer.zero_code_expand">
-<tt class="descname">zero_code_expand</tt><big>(</big><em>msg_buf</em>, <em>msg_size</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPPacketDeserializer.zero_code_expand" title="Permalink to this definition">¶</a></dt>
-<dd>made this call more generic due to changes in how zero_code_expand is called. 
-no more header issues in actual call. Its taken care of earlier in process</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="pyogp.lib.base.message.udpdeserializer.DataUnpacker">
 <em class="property">
 class </em><tt class="descclassname">pyogp.lib.base.message.udpdeserializer.</tt><tt class="descname">DataUnpacker</tt><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.DataUnpacker" title="Permalink to this definition">¶</a></dt>
@@ -133,28 +116,6 @@ serialized and sent.</p>
 <dl class="method">
 <dt id="pyogp.lib.base.message.udpdeserializer.MsgData.get_block">
 <tt class="descname">get_block</tt><big>(</big><em>block_name</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.MsgData.get_block" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="pyogp.lib.base.message.udpdeserializer.UDPPacket">
-<em class="property">
-class </em><tt class="descclassname">pyogp.lib.base.message.udpdeserializer.</tt><tt class="descname">UDPPacket</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPPacket" title="Permalink to this definition">¶</a></dt>
-<dd><p>a UDP packet</p>
-<dl class="method">
-<dt id="pyogp.lib.base.message.udpdeserializer.UDPPacket.add_ack">
-<tt class="descname">add_ack</tt><big>(</big><em>packet_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPPacket.add_ack" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.message.udpdeserializer.UDPPacket.data">
-<tt class="descname">data</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPPacket.data" title="Permalink to this definition">¶</a></dt>
-<dd>a string representation of a packet</dd></dl>
-
-<dl class="method">
-<dt id="pyogp.lib.base.message.udpdeserializer.UDPPacket.get_var">
-<tt class="descname">get_var</tt><big>(</big><em>block</em>, <em>variable</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPPacket.get_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -234,6 +195,48 @@ classmethod </em><tt class="descname">MVT_as_string</tt><big>(</big><em>typenum<
 </dd></dl>
 
 <dl class="class">
+<dt id="pyogp.lib.base.message.udpdeserializer.Message">
+<em class="property">
+class </em><tt class="descclassname">pyogp.lib.base.message.udpdeserializer.</tt><tt class="descname">Message</tt><big>(</big><em>name</em>, <em>*args</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.Message" title="Permalink to this definition">¶</a></dt>
+<dd><p>an active message</p>
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.Message.add_ack">
+<tt class="descname">add_ack</tt><big>(</big><em>packet_id</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.Message.add_ack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.Message.add_block">
+<tt class="descname">add_block</tt><big>(</big><em>block</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.Message.add_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.Message.add_data">
+<tt class="descname">add_data</tt><big>(</big><em>block_name</em>, <em>var_name</em>, <em>data</em>, <em>data_size</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.Message.add_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.Message.data">
+<tt class="descname">data</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.Message.data" title="Permalink to this definition">¶</a></dt>
+<dd>a string representation of a packet</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.Message.get_block">
+<tt class="descname">get_block</tt><big>(</big><em>block_name</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.Message.get_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.Message.get_var">
+<tt class="descname">get_var</tt><big>(</big><em>block</em>, <em>variable</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.Message.get_var" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.Message.parse_blocks">
+<tt class="descname">parse_blocks</tt><big>(</big><em>block_list</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.Message.parse_blocks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="pyogp.lib.base.message.udpdeserializer.MsgVariableData">
 <em class="property">
 class </em><tt class="descclassname">pyogp.lib.base.message.udpdeserializer.</tt><tt class="descname">MsgVariableData</tt><big>(</big><em>name</em>, <em>data</em>, <em>var_type=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.MsgVariableData" title="Permalink to this definition">¶</a></dt>
@@ -248,6 +251,23 @@ serialized and sent</p>
 <dt id="pyogp.lib.base.message.udpdeserializer.MsgVariableData.get_var_type_as_string">
 <tt class="descname">get_var_type_as_string</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.MsgVariableData.get_var_type_as_string" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyogp.lib.base.message.udpdeserializer.UDPMessageDeserializer">
+<em class="property">
+class </em><tt class="descclassname">pyogp.lib.base.message.udpdeserializer.</tt><tt class="descname">UDPMessageDeserializer</tt><big>(</big><em>message_handler=None</em>, <em>settings=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPMessageDeserializer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.UDPMessageDeserializer.deserialize">
+<tt class="descname">deserialize</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPMessageDeserializer.deserialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.message.udpdeserializer.UDPMessageDeserializer.zero_code_expand">
+<tt class="descname">zero_code_expand</tt><big>(</big><em>msg_buf</em>, <em>msg_size</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.message.udpdeserializer.UDPMessageDeserializer.zero_code_expand" title="Permalink to this definition">¶</a></dt>
+<dd>made this call more generic due to changes in how zero_code_expand is called. 
+no more header issues in actual call. Its taken care of earlier in process</dd></dl>
 
 </dd></dl>
 
@@ -295,7 +315,7 @@ serialized and sent.</p>
           <a href="udpdispatcher.html" title="udpdispatcher"
              >next</a> |</li>
         <li class="right" >
-          <a href="types.html" title="types"
+          <a href="template_parser.html" title="template_parser"
              >previous</a> |</li>
         <li><a href="../index.html">Pyogp v0.1 documentation</a> &raquo;</li>
           <li><a href="../modules.html" >Modules</a> &raquo;</li> 
