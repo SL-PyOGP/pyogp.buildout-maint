@@ -96,6 +96,11 @@ Tests: tests/test_inventory.py</p>
 <dd>sends an ImprovedInstantMessage packet accepting or declining an inventory offer</dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.create_new_item">
+<tt class="descname">create_new_item</tt><big>(</big><em>folder</em>, <em>name</em>, <em>desc</em>, <em>asset_type</em>, <em>inv_type</em>, <em>wearable_type</em>, <em>next_owner_permission</em>, <em>callback=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.create_new_item" title="Permalink to this definition">¶</a></dt>
+<dd>Creates a new item in folder.</dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.inventory.InventoryManager.display_folder_contents">
 <tt class="descname">display_folder_contents</tt><big>(</big><em>folder_id=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.display_folder_contents" title="Permalink to this definition">¶</a></dt>
 <dd>returns a list of the local representation of a folder&#8217;s contents</dd></dl>
@@ -181,6 +186,11 @@ look through everything in self.folders</p>
 <dd>send a request to the grid for library items</dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.inventory.InventoryManager.send_CreateInventoryItem">
+<tt class="descname">send_CreateInventoryItem</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>callback_id</em>, <em>folder_id</em>, <em>transaction_id</em>, <em>next_owner_mask</em>, <em>type_</em>, <em>inv_type</em>, <em>wearable_type</em>, <em>name</em>, <em>desc</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.send_CreateInventoryItem" title="Permalink to this definition">¶</a></dt>
+<dd>sends a CreateInventoryItem message</dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.inventory.InventoryManager.send_FetchInventory">
 <tt class="descname">send_FetchInventory</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>owner_id</em>, <em>inventory_ids</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.InventoryManager.send_FetchInventory" title="Permalink to this definition">¶</a></dt>
 <dd>send a FetchInventory message to the host simulator 
@@ -226,6 +236,11 @@ class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="de
 <dt id="pyogp.lib.base.inventory.UDP_Inventory.confirm_inventory_offer">
 <tt class="descname">confirm_inventory_offer</tt><big>(</big><em>FromAgentID</em>, <em>FromAgentName</em>, <em>InventoryName</em>, <em>ID</em>, <em>AssetType</em>, <em>ItemID</em>, <em>accept</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.confirm_inventory_offer" title="Permalink to this definition">¶</a></dt>
 <dd>sends an ImprovedInstantMessage packet accepting or declining an inventory offer</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.create_new_item">
+<tt class="descname">create_new_item</tt><big>(</big><em>folder</em>, <em>name</em>, <em>desc</em>, <em>asset_type</em>, <em>inv_type</em>, <em>wearable_type</em>, <em>next_owner_permission</em>, <em>callback=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.create_new_item" title="Permalink to this definition">¶</a></dt>
+<dd>Creates a new item in folder.</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.UDP_Inventory.display_folder_contents">
@@ -313,6 +328,11 @@ look through everything in self.folders</p>
 <dd>send a request to the grid for library items</dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.inventory.UDP_Inventory.send_CreateInventoryItem">
+<tt class="descname">send_CreateInventoryItem</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>callback_id</em>, <em>folder_id</em>, <em>transaction_id</em>, <em>next_owner_mask</em>, <em>type_</em>, <em>inv_type</em>, <em>wearable_type</em>, <em>name</em>, <em>desc</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.send_CreateInventoryItem" title="Permalink to this definition">¶</a></dt>
+<dd>sends a CreateInventoryItem message</dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.inventory.UDP_Inventory.send_FetchInventory">
 <tt class="descname">send_FetchInventory</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>owner_id</em>, <em>inventory_ids</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.UDP_Inventory.send_FetchInventory" title="Permalink to this definition">¶</a></dt>
 <dd>send a FetchInventory message to the host simulator 
@@ -329,6 +349,11 @@ class </em><tt class="descclassname">pyogp.lib.base.inventory.</tt><tt class="de
 <dt id="pyogp.lib.base.inventory.AIS.confirm_inventory_offer">
 <tt class="descname">confirm_inventory_offer</tt><big>(</big><em>FromAgentID</em>, <em>FromAgentName</em>, <em>InventoryName</em>, <em>ID</em>, <em>AssetType</em>, <em>ItemID</em>, <em>accept</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.confirm_inventory_offer" title="Permalink to this definition">¶</a></dt>
 <dd>sends an ImprovedInstantMessage packet accepting or declining an inventory offer</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.inventory.AIS.create_new_item">
+<tt class="descname">create_new_item</tt><big>(</big><em>folder</em>, <em>name</em>, <em>desc</em>, <em>asset_type</em>, <em>inv_type</em>, <em>wearable_type</em>, <em>next_owner_permission</em>, <em>callback=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.create_new_item" title="Permalink to this definition">¶</a></dt>
+<dd>Creates a new item in folder.</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.display_folder_contents">
@@ -416,6 +441,11 @@ look through everything in self.folders</p>
 <dd>send a request to the grid for library item attributes</dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.inventory.AIS.send_CreateInventoryItem">
+<tt class="descname">send_CreateInventoryItem</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>callback_id</em>, <em>folder_id</em>, <em>transaction_id</em>, <em>next_owner_mask</em>, <em>type_</em>, <em>inv_type</em>, <em>wearable_type</em>, <em>name</em>, <em>desc</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.send_CreateInventoryItem" title="Permalink to this definition">¶</a></dt>
+<dd>sends a CreateInventoryItem message</dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.inventory.AIS.send_FetchInventory">
 <tt class="descname">send_FetchInventory</tt><big>(</big><em>agent_id</em>, <em>session_id</em>, <em>owner_id</em>, <em>inventory_ids</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.inventory.AIS.send_FetchInventory" title="Permalink to this definition">¶</a></dt>
 <dd>send a FetchInventory message to the host simulator 
@@ -494,7 +524,7 @@ Tests: tests/test_inventory.py</p>
     </div>
     <div class="footer">
       &copy; Copyright 2009, Pyogp team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
     </div>
   </body>
 </html>

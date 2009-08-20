@@ -102,6 +102,11 @@ Tests: tests/caps.txt, tests/test_caps.py</p>
 <tt class="descname">POST</tt><big>(</big><em>payload</em>, <em>custom_headers={}</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.caps.Capability.POST" title="Permalink to this definition">¶</a></dt>
 <dd>call this capability, return the parsed result</dd></dl>
 
+<dl class="method">
+<dt id="pyogp.lib.base.caps.Capability.POST_FILE">
+<tt class="descname">POST_FILE</tt><big>(</big><em>file_name</em>, <em>custom_headers={}</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.caps.Capability.POST_FILE" title="Permalink to this definition">¶</a></dt>
+<dd>Opens file at file_name and posts contents to this cap.</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -119,6 +124,11 @@ class </em><tt class="descclassname">pyogp.lib.base.caps.</tt><tt class="descnam
 <dt id="pyogp.lib.base.caps.SeedCapability.POST">
 <tt class="descname">POST</tt><big>(</big><em>payload</em>, <em>custom_headers={}</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.caps.SeedCapability.POST" title="Permalink to this definition">¶</a></dt>
 <dd>call this capability, return the parsed result</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.caps.SeedCapability.POST_FILE">
+<tt class="descname">POST_FILE</tt><big>(</big><em>file_name</em>, <em>custom_headers={}</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.caps.SeedCapability.POST_FILE" title="Permalink to this definition">¶</a></dt>
+<dd>Opens file at file_name and posts contents to this cap.</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.caps.SeedCapability.get">
@@ -159,7 +169,7 @@ see <a class="reference external" href="http://wiki.secondlife.com/wiki/OGP_Base
     </div>
     <div class="footer">
       &copy; Copyright 2009, Pyogp team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
     </div>
   </body>
 </html>

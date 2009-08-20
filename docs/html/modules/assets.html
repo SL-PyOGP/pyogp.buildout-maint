@@ -110,11 +110,17 @@ Tests: test_assets.py</p>
 
 <dl class="method">
 <dt id="pyogp.lib.base.assets.AssetManager.request_asset">
-<tt class="descname">request_asset</tt><big>(</big><em>assetID</em>, <em>assetType</em>, <em>isPriority</em>, <em>callback</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.assets.AssetManager.request_asset" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">request_asset</tt><big>(</big><em>assetID</em>, <em>assetType</em>, <em>isPriority</em>, <em>callback=None</em>, <em>itemID=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.assets.AssetManager.request_asset" title="Permalink to this definition">¶</a></dt>
 <dd>Sends a TransferRequest to the sim for asset assetID with type assetType,
 will call back with the assetID and True with asset received or False
 if request failed.  On successful request the asset is store in
 self.assets</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.assets.AssetManager.send_AssetUploadRequest">
+<tt class="descname">send_AssetUploadRequest</tt><big>(</big><em>TransactionID</em>, <em>Type</em>, <em>Tempfile</em>, <em>StoreLocal</em>, <em>AssetData=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.assets.AssetManager.send_AssetUploadRequest" title="Permalink to this definition">¶</a></dt>
+<dd>Sends an AssetUploadRequest packet to request that an asset be
+uploaded to the to the sim</dd></dl>
 
 <dl class="method">
 <dt id="pyogp.lib.base.assets.AssetManager.send_TransferRequest">
@@ -122,6 +128,16 @@ self.assets</dd></dl>
 <dd>sends a TransferRequest packet to request an asset to download, the
 assetID and assetType of the request are stored in the Params variable
 see assets.request_asset for example.</dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.assets.AssetManager.upload_script_via_caps">
+<tt class="descname">upload_script_via_caps</tt><big>(</big><em>item_id</em>, <em>script</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.assets.AssetManager.upload_script_via_caps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.assets.AssetManager.upload_via_udp">
+<tt class="descname">upload_via_udp</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.assets.AssetManager.upload_via_udp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -160,7 +176,7 @@ class </em><tt class="descclassname">pyogp.lib.base.assets.</tt><tt class="descn
     </div>
     <div class="footer">
       &copy; Copyright 2009, Pyogp team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
     </div>
   </body>
 </html>

@@ -21,7 +21,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Pyogp v0.1 documentation" href="../index.html" />
     <link rel="up" title="Modules" href="../modules.html" />
-    <link rel="next" title="params" href="params.html" />
+    <link rel="next" title="parcel" href="parcel.html" />
     <link rel="prev" title="net" href="net.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
           <a href="../modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="params.html" title="params"
+          <a href="parcel.html" title="parcel"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="net.html" title="net"
@@ -50,8 +50,8 @@
             <p class="topless"><a href="net.html"
                                   title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">net</span></tt></a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="params.html"
-                                  title="next chapter"><tt class="docutils literal"><span class="pre">params</span></tt></a></p>
+            <p class="topless"><a href="parcel.html"
+                                  title="next chapter"><tt class="docutils literal"><span class="pre">parcel</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="../_sources/modules/objects.txt"
@@ -318,6 +318,13 @@ object actually created.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.objects.ObjectManager.send_RezScript">
+<tt class="descname">send_RezScript</tt><big>(</big><em>agent</em>, <em>prim</em>, <em>item_id=00000000-0000-0000-0000-000000000000</em>, <em>Enabled=True</em>, <em>GroupID=00000000-0000-0000-0000-000000000000</em>, <em>BaseMask=2147483647</em>, <em>OwnerMask=2147483647</em>, <em>GroupMask=0</em>, <em>EveryoneMask=0</em>, <em>NextOwnerMask=0</em>, <em>GroupOwned=False</em>, <em>Type=10</em>, <em>InvType=10</em>, <em>Flags=0</em>, <em>SaleType=0</em>, <em>SalePrice=0</em>, <em>Name='New Script'</em>, <em>Description='Created by PyOGP'</em>, <em>CreationDate=0</em>, <em>CRC=0</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.objects.ObjectManager.send_RezScript" title="Permalink to this definition">¶</a></dt>
+<dd>sends a RezScript message to the sim, not providing a item_id will
+rez the default script otherwise the script with ItemID item_id will be rezzed
+to prim</dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.objects.ObjectManager.store_avatar">
 <tt class="descname">store_avatar</tt><big>(</big><em>_objectdata</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.objects.ObjectManager.store_avatar" title="Permalink to this definition">¶</a></dt>
 <dd>store a representation of an avatar (Object() instance) that has been transformed from data off the wire</dd></dl>
@@ -365,7 +372,7 @@ If not, we create a new object</p>
           <a href="../modindex.html" title="Global Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="params.html" title="params"
+          <a href="parcel.html" title="parcel"
              >next</a> |</li>
         <li class="right" >
           <a href="net.html" title="net"
@@ -376,7 +383,7 @@ If not, we create a new object</p>
     </div>
     <div class="footer">
       &copy; Copyright 2009, Pyogp team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
     </div>
   </body>
 </html>

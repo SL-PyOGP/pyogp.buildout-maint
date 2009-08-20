@@ -3,6 +3,10 @@
 
 .. automodule:: pyogp.lib.base.tests.test_inventory
 
+.. autoclass:: pyogp.lib.base.tests.test_inventory.DummyRegion
+  :members:
+  :undoc-members:
+
 .. autoclass:: pyogp.lib.base.tests.test_inventory.TestInventory
   :members:
   :undoc-members:

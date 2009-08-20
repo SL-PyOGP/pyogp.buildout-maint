@@ -81,6 +81,18 @@
   <div class="section" id="module-pyogp.lib.base.tests.test_inventory">
 <h1><tt class="xref docutils literal"><span class="pre">test_inventory</span></tt><a class="headerlink" href="#module-pyogp.lib.base.tests.test_inventory" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="pyogp.lib.base.tests.test_inventory.DummyRegion">
+<em class="property">
+class </em><tt class="descclassname">pyogp.lib.base.tests.test_inventory.</tt><tt class="descname">DummyRegion</tt><big>(</big><em>global_x=0</em>, <em>global_y=0</em>, <em>seed_capability_url=None</em>, <em>udp_blacklist=None</em>, <em>sim_ip=None</em>, <em>sim_port=None</em>, <em>circuit_code=None</em>, <em>agent=None</em>, <em>settings=None</em>, <em>message_handler=None</em>, <em>handle=None</em>, <em>events_handler=None</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.tests.test_inventory.DummyRegion" title="Permalink to this definition">¶</a></dt>
+<dd><p>initialize a region</p>
+<dl class="method">
+<dt id="pyogp.lib.base.tests.test_inventory.DummyRegion.enqueue_message">
+<tt class="descname">enqueue_message</tt><big>(</big><em>packet</em>, <em>reliable=False</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.tests.test_inventory.DummyRegion.enqueue_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="pyogp.lib.base.tests.test_inventory.TestInventory">
 <em class="property">
 class </em><tt class="descclassname">pyogp.lib.base.tests.test_inventory.</tt><tt class="descname">TestInventory</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="headerlink" href="#pyogp.lib.base.tests.test_inventory.TestInventory" title="Permalink to this definition">¶</a></dt>
@@ -98,6 +110,11 @@ not have a method with the specified name.</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="pyogp.lib.base.tests.test_inventory.TestInventory.test_create_new_item">
+<tt class="descname">test_create_new_item</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.tests.test_inventory.TestInventory.test_create_new_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="pyogp.lib.base.tests.test_inventory.TestInventory.test_display_folder_contents_by_id">
 <tt class="descname">test_display_folder_contents_by_id</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.tests.test_inventory.TestInventory.test_display_folder_contents_by_id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -105,6 +122,16 @@ not have a method with the specified name.</p>
 <dl class="method">
 <dt id="pyogp.lib.base.tests.test_inventory.TestInventory.test_display_folder_contents_by_nonexistant_id">
 <tt class="descname">test_display_folder_contents_by_nonexistant_id</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.tests.test_inventory.TestInventory.test_display_folder_contents_by_nonexistant_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.tests.test_inventory.TestInventory.test_search_inventory_for_folders">
+<tt class="descname">test_search_inventory_for_folders</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.tests.test_inventory.TestInventory.test_search_inventory_for_folders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyogp.lib.base.tests.test_inventory.TestInventory.test_search_inventory_for_items">
+<tt class="descname">test_search_inventory_for_items</tt><big>(</big><big>)</big><a class="headerlink" href="#pyogp.lib.base.tests.test_inventory.TestInventory.test_search_inventory_for_items" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -138,7 +165,7 @@ not have a method with the specified name.</p>
     </div>
     <div class="footer">
       &copy; Copyright 2009, Pyogp team.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
     </div>
   </body>
 </html>
