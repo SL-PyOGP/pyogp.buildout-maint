@@ -1,0 +1,12 @@
+#use glob syntax
+syntax: glob
+
+.hgignore
+*.pyc
+build/*
+pyogp.lib.base.egg-info/*
+dist/*
+eggs/*
+develop-eggs/*
+bin/*
+.installed.cfg
