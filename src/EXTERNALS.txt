@@ -1,2 +1,0 @@
-pyogp.lib.base https://svn.secondlife.com/svn/linden/projects/2008/pyogp/pyogp.lib.base/trunk
-pyogp.interop https://svn.secondlife.com/svn/linden/projects/2008/pyogp/pyogp.interop/trunk
