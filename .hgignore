@@ -4,9 +4,11 @@ syntax: glob
 .hgignore
 *.pyc
 build/*
-pyogp.lib.base.egg-info/*
 dist/*
 eggs/*
 develop-eggs/*
 bin/*
+lib/*
+include/*
+.Python
 .installed.cfg
